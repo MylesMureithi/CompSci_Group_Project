@@ -5,9 +5,9 @@ import numpy as np
 
 
 
-utilities = pd.read_csv('data_files/utilities.csv') # utilities.csv
-substations = pd.read_csv('data_files/substations.csv') # substations.csv
-lines = pd.read_csv('data_files/lines.csv') # lines.csv
+utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
+substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
+lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
 
 
 # Step 2: Handle missing values
