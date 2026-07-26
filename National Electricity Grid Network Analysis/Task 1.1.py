@@ -4,11 +4,11 @@ import pandas as pd
 import numpy as np
 
 
-
 utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
 substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
 lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
 
+#print(utilities.info())
 
 # Step 2: Handle missing values
     # Even though the generator produces clean data, treat this step seriously —
