@@ -9,16 +9,6 @@ utilities = pd.read_csv('utilities.csv') # utilities.csv
 substations = pd.read_csv('substations.csv') # substations.csv
 lines = pd.read_csv('lines.csv') # lines.csv
 
-"""
-print(utilities.isna().sum())
-print()
-
-print(substations.isna().sum())
-print()
-
-print(lines.isna().sum())
-print()
-"""
 
 median_lat = stat.median(substations['Latitude'])
 print("Median Latitude:", median_lat)
