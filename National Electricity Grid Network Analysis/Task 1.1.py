@@ -36,7 +36,7 @@ print()
 
 
 data = [
-    ['Latitude', 'Longitude', 'Voltage (kV)', 'Capacity (MVA)'],
+    ['Latitude', 'Longitude', 'Voltage (kV)', 'Capacity (MVA)', 'Commissioning Year'],
     [median_lat, median_long, median_volt, median_cap]
 ]
 
@@ -52,8 +52,67 @@ for i in data[0]:
             substations.to_csv("new_substations.csv", index=False)
 
 
-# Step 3: Data validation
-    # Verify every Source/Destination Substation ID in lines.csv exists in substations.csv
-    # Check for duplicate entries
-    # Validate that latitude/longitude fall within plausible West African bounds
-    # Ensure data type consistency (numeric columns are truly numeric)
+
+line_ids = list(lines['Source Substation ID'])
+sub_ids = list(substations['Substation ID'])
+
+present = 0
+not_present = 0
+
+for value in line_ids:
+    if value in sub_ids:
+        present += 1
+    else:
+        not_present +=1
+
+
+line_ids_copy = set(line_ids)
+
+for value in line_ids_copy:
+    if value in line_ids:
+        count = line_ids.count(value)
+
+        if count == 1:
+            continue
+        else:
+            print(f"ID {value} is duplicated {count} times.")
+
+
+print(f"\nPresent values: {present}")
+print(f"Not present values: {not_present}")
+
+
+min_lat = 4
+max_lat = 28
+
+min_long = -17
+max_long = 16
+
+longitudes = substations['Longitude']
+latitudes = substations['Latitude']
+
+for val in longitudes:
+    if min_long <= val <= max_long:
+        print("Valid Longitude")
+    else:
+        print("Invalid Longitude")
+
+print()
+
+for val in latitudes:
+    if min_lat <= val <= max_lat:
+        print("Valid Latitude")
+    else:
+        print("Invalid Latitude")
+
+print()
+
+types = [int, float]
+
+for i in data[0]:
+    for j, value in enumerate(substations[i]):
+        if type(value) in types:
+            continue
+        else:
+            print("Not In Types")
+
