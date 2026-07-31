@@ -123,7 +123,8 @@ for value in line_sub_ids:
         line_count = line_sub_ids['Source Substation ID'].count(value)
         print(value, line_count)
 
-
+# Did some research and for what we are dealing with I think we can use the Counter from python collections. Just a thought though.
+#From collections imoport Counter
 
 """sub_ids = list(lines['Source Substation ID'])
 
