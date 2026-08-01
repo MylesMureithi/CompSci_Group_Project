@@ -110,18 +110,17 @@ print()
 # ●	Analyse geographic distribution of substations and lines by [region] substation ID
 
 regions = substations['Region']
-line_sub_ids = lines['Source Substation ID']
-sub_sub_ids = substations['Substation ID']
+line_sub_ids = list(lines['Source Substation ID'])
+sub_sub_ids = list(substations['Substation ID'])
 
 
 """for value in line_sub_ids:
     if value in sub_sub_ids:
-        print(regions[line_sub_ids])"""
-
-for value in line_sub_ids:
+        print(regions[value])"""
+"""for value in line_sub_ids:
     if value in sub_sub_ids:
-        line_count = line_sub_ids['Source Substation ID'].count(value)
-        print(value, line_count)
+        line_count = line_sub_ids.count(value)
+        print(value, line_count)"""
 
 # Did some research and for what we are dealing with I think we can use the Counter from python collections. Just a thought though.
 #From collections import Counter
@@ -139,10 +138,9 @@ for value in sub_ids_copy:
         else:
             print(f"Source Substation ID {value} connects to {count} lines.")
 
-print()"""
+print()
 
 
-"""
 for value in line_ids_copy:
     if value in line_ids:
         count = line_ids.count(value)
@@ -150,8 +148,35 @@ for value in line_ids_copy:
         if count == 1:
             continue
         else:
-            print(f"ID {value} is duplicated {count} times.")
+            print(f"ID {value} is duplicated {count} times.")"""
 
 
+substationinregion={}
+for reg in regions:
+    if reg in substationinregion:
+        substationinregion[reg] = substationinregion[reg] + 1
+    else:
+        substationinregion[reg] = 1
 
-"""
+regionlines={}
+for value in line_sub_ids:
+    if value in sub_sub_ids:
+        place = sub_sub_ids.index(value)
+        region = regions[place]
+        if region in regionlines:
+            regionlines[region] = regionlines[region] + 1
+        else:
+            regionlines[region] = 1
+
+
+for reg in substationinregion:
+    numberlines =regionlines.get(reg, 0)
+    print(f"Region {reg} has {substationinregion[reg]} substations and {numberlines} lines.")
+
+"""Examine substation status (Active/Inactive) and voltage-level distribution"""
+print()
+print("Substation Status Analysis:")
+print(substations['Status'].value_counts(), "\n")
+
+print("Voltage Summary:")
+print(substations[[ 'Voltage (kV)']].describe(), "\n")
