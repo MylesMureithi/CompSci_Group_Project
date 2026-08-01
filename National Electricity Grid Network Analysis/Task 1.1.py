@@ -5,9 +5,9 @@ import numpy as np
 import statistics as stat
 
 
-utilities = pd.read_csv('utilities.csv') # utilities.csv
-substations = pd.read_csv('substations.csv') # substations.csv
-lines = pd.read_csv('lines.csv') # lines.csv
+utilities = pd.read_csv('data_files/utilities.csv') # utilities.csv
+substations = pd.read_csv('data_files/substations.csv') # substations.csv
+lines = pd.read_csv('data_files/lines.csv') # lines.csv
 
 
 median_lat = stat.median(substations['Latitude'])
@@ -71,6 +71,7 @@ for value in line_ids_copy:
 print(f"\nPresent values: {present}")
 print(f"Not present values: {not_present}")
 
+print()
 
 min_lat = 4
 max_lat = 28

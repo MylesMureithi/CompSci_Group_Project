@@ -48,14 +48,15 @@ data = [
     ['Name', 'Region', 'Country', 'Type', 'Status']
 ]
 
+print()
 
 for i in data[0]:
-    print(i)
-    print(stat.median(substations[i]))
-    print(stat.mean(substations[i]))
-    print(stat.mode(substations[i]))
-    print(min(substations[i]))
-    print(max(substations[i]))
+    print(f"{i}:")
+    print("Median:", stat.median(substations[i]))
+    print("Mean:", stat.mean(substations[i]))
+    print("Mode:",stat.mode(substations[i]))
+    print("Min:", min(substations[i]))
+    print("Max:",max(substations[i]))
     print()
 
 # ●	Create frequency distributions for categorical variables
