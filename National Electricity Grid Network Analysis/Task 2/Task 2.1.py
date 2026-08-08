@@ -85,7 +85,6 @@ nx.draw(
 )
 
 plt.title("National Electricity Grid Network")
-plt.show()
 
 
 # Calculate network metrics
@@ -126,7 +125,7 @@ comm = nx.community.louvain_communities(G)
 print(comm)
 
 # community detection
-"""communities = {}
+communities = {}
 
 countries = substations['Country'].unique()
 
@@ -146,19 +145,47 @@ for country in countries:
         communities[country][reg] = filtered_stations
 
 print(communities)
-"""
+
+print()
 
 # - Critical-substation identification
+rank_median = stat.median(node_pagerank.values())
 
- 
+substation_name = list(substations["Name"])
+regions = list(substations["Region"])
 
+print("Most connected substations by importance (%):")
+for key, value in node_pagerank.items():
+    if value > rank_median:
+        print(f"'{substation_name[key - 1]}', Region '{regions[key - 1]}': {value*100:.1f}%")
 
-
+print()
 
 # Analyse network structure
-# - Identify the most-connected substations (regional 'superhubs')
-# - Find bridge lines (critical single points of connection)
-# - Detect isolated components
-# - Measure network efficiency
+# - Find bridge lines (critical single points of connection)            
+edge_centrality = nx.edge_betweenness_centrality(G)
+sorted_edges = sorted(edge_centrality.items(), key=lambda x: x[1], reverse=True)
 
+print("Critical bridge lines:")
+for edge, score in sorted_edges[:10]:  # top 10
+    print(f"{edge}: {score:.4f}")
+
+print()
+# - Detect isolated components
+source_substation = list(lines["Source Substation ID"])
+destination_substation = list(lines["Destination Substation ID"])
+substation_ids = list(substations["Substation ID"])
+
+for value in substation_ids:
+    if value not in source_substation and value not in  destination_substation:
+        print(f"Substation '{substation_name[value - 1]}' is isolated.")
+
+print()
+
+# - Measure network efficiency
+print(f"The network efficiency is at {(nx.global_efficiency(G))*100:.1f}%, meaning that it operates at approx.  {(nx.global_efficiency(G))*100:.1f}% of its possible efficiency.")
+print()
+
+# Plotting the network
+plt.show()
 
