@@ -4,9 +4,9 @@ import plotly.express as px
 import networkx as nx
 
 # The generator script already writes proper headers, so we can read directly.
-utilities = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/utilities.csv')
-substations = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/substations.csv')
-lines = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/lines.csv')
+utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
+substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
+lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
 
 # Interactive map of substations
 fig = px.scatter_geo(substations, lat='Latitude', lon='Longitude', hover_name='Name',

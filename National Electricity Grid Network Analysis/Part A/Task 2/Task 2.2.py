@@ -12,9 +12,9 @@ import geopandas as gp
 import geodatasets as gd
 
 
-utilities = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/utilities.csv') # utilities.csv
-substations = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/substations.csv') # substations.csv
-lines = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/lines.csv') # lines.csv
+utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
+substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
+lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
 
 
 ## Geographic analysis
