@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2ae3e8d5c9a949aa4339bc5e51a90eb8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2ae3e8d5c9a949aa4339bc5e51a90eb8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2ae3e8d5c9a949aa4339bc5e51a90eb8 = L.map(
+                "map_2ae3e8d5c9a949aa4339bc5e51a90eb8",
+                {
+                    center: [6.898402272727273, -1.1948681818181817],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4cb38b9401f409d240504a64a39da224 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4cb38b9401f409d240504a64a39da224.addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+            var circle_marker_9b850e9fd4fadc62ef42f38652440559 = L.circleMarker(
+                [5.6085, -0.2193],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_f29ff8fe126f624e58d85f6566609410 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba4a6431ab06502f03a64afb8827a65f = $(`<div id="html_ba4a6431ab06502f03a64afb8827a65f" style="width: 100.0%; height: 100.0%;">Substation: Achimota Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_f29ff8fe126f624e58d85f6566609410.setContent(html_ba4a6431ab06502f03a64afb8827a65f);
+            
+        
+
+        circle_marker_9b850e9fd4fadc62ef42f38652440559.bindPopup(popup_f29ff8fe126f624e58d85f6566609410)
+        ;
+
+        
+    
+    
+            circle_marker_9b850e9fd4fadc62ef42f38652440559.bindTooltip(
+                `<div>
+                     Achimota Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd5ba845d8e51ccde7f69280ee4e6d74 = L.circleMarker(
+                [5.6596, -0.0226],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_cbaa7beb273c47b62071256d3fbd106a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40a4911edd7eac42af93ec7c53013d2d = $(`<div id="html_40a4911edd7eac42af93ec7c53013d2d" style="width: 100.0%; height: 100.0%;">Substation: Tema Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_cbaa7beb273c47b62071256d3fbd106a.setContent(html_40a4911edd7eac42af93ec7c53013d2d);
+            
+        
+
+        circle_marker_dd5ba845d8e51ccde7f69280ee4e6d74.bindPopup(popup_cbaa7beb273c47b62071256d3fbd106a)
+        ;
+
+        
+    
+    
+            circle_marker_dd5ba845d8e51ccde7f69280ee4e6d74.bindTooltip(
+                `<div>
+                     Tema Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb3ed91e5c0abcf0dcd6512119ea5207 = L.circleMarker(
+                [5.563, -0.2971],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_24565ade42383a0778aee1b1520d90c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_47ed0e49187cf9d01475b30139f189a6 = $(`<div id="html_47ed0e49187cf9d01475b30139f189a6" style="width: 100.0%; height: 100.0%;">Substation: Mallam Substation<br>Connected Lines: 5.0</div>`)[0];
+                popup_24565ade42383a0778aee1b1520d90c2.setContent(html_47ed0e49187cf9d01475b30139f189a6);
+            
+        
+
+        circle_marker_bb3ed91e5c0abcf0dcd6512119ea5207.bindPopup(popup_24565ade42383a0778aee1b1520d90c2)
+        ;
+
+        
+    
+    
+            circle_marker_bb3ed91e5c0abcf0dcd6512119ea5207.bindTooltip(
+                `<div>
+                     Mallam Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3382ca595aaf4964ea3798fbc519b15 = L.circleMarker(
+                [5.6401, -0.1799],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_2c535fdea441fc9231f28c351a5dbe7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_471a2b1fb002fbb521b4d94524e70f68 = $(`<div id="html_471a2b1fb002fbb521b4d94524e70f68" style="width: 100.0%; height: 100.0%;">Substation: Legon Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_2c535fdea441fc9231f28c351a5dbe7d.setContent(html_471a2b1fb002fbb521b4d94524e70f68);
+            
+        
+
+        circle_marker_f3382ca595aaf4964ea3798fbc519b15.bindPopup(popup_2c535fdea441fc9231f28c351a5dbe7d)
+        ;
+
+        
+    
+    
+            circle_marker_f3382ca595aaf4964ea3798fbc519b15.bindTooltip(
+                `<div>
+                     Legon Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_83506b977880b40b84e5bc5aa778451c = L.circleMarker(
+                [5.5691, -0.2413],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_1a997c0d911fd4c80400a67e7b1fd9d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ae37381b3bd8e2d90b025503934946c = $(`<div id="html_1ae37381b3bd8e2d90b025503934946c" style="width: 100.0%; height: 100.0%;">Substation: Kaneshie Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_1a997c0d911fd4c80400a67e7b1fd9d6.setContent(html_1ae37381b3bd8e2d90b025503934946c);
+            
+        
+
+        circle_marker_83506b977880b40b84e5bc5aa778451c.bindPopup(popup_1a997c0d911fd4c80400a67e7b1fd9d6)
+        ;
+
+        
+    
+    
+            circle_marker_83506b977880b40b84e5bc5aa778451c.bindTooltip(
+                `<div>
+                     Kaneshie Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb028dfaa74998f091bc8554f8f23489 = L.circleMarker(
+                [5.5921, -0.1439],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_442108beb20a618bd59ce8c1f23c5b55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b22117660a4b8a6f8d686a08e6df1fe = $(`<div id="html_4b22117660a4b8a6f8d686a08e6df1fe" style="width: 100.0%; height: 100.0%;">Substation: Aboadze Junction Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_442108beb20a618bd59ce8c1f23c5b55.setContent(html_4b22117660a4b8a6f8d686a08e6df1fe);
+            
+        
+
+        circle_marker_eb028dfaa74998f091bc8554f8f23489.bindPopup(popup_442108beb20a618bd59ce8c1f23c5b55)
+        ;
+
+        
+    
+    
+            circle_marker_eb028dfaa74998f091bc8554f8f23489.bindTooltip(
+                `<div>
+                     Aboadze Junction Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1411ba40cf2846997961d834bea06edc = L.circleMarker(
+                [6.6856, -1.623],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_a5a1a90a34980a2f53c1819b3c6086dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d4dea770fee5d90970a37fd01724c0b = $(`<div id="html_5d4dea770fee5d90970a37fd01724c0b" style="width: 100.0%; height: 100.0%;">Substation: Kumasi Central Substation<br>Connected Lines: 5.0</div>`)[0];
+                popup_a5a1a90a34980a2f53c1819b3c6086dd.setContent(html_5d4dea770fee5d90970a37fd01724c0b);
+            
+        
+
+        circle_marker_1411ba40cf2846997961d834bea06edc.bindPopup(popup_a5a1a90a34980a2f53c1819b3c6086dd)
+        ;
+
+        
+    
+    
+            circle_marker_1411ba40cf2846997961d834bea06edc.bindTooltip(
+                `<div>
+                     Kumasi Central Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_83434fd735ad178cd3480e4858e3df10 = L.circleMarker(
+                [6.7128, -1.4716],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_e6102d80d2c8eab76fc1bf32243f8923 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_332b366573dd37b8cb261d4f7a3f9e4e = $(`<div id="html_332b366573dd37b8cb261d4f7a3f9e4e" style="width: 100.0%; height: 100.0%;">Substation: Ejisu Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_e6102d80d2c8eab76fc1bf32243f8923.setContent(html_332b366573dd37b8cb261d4f7a3f9e4e);
+            
+        
+
+        circle_marker_83434fd735ad178cd3480e4858e3df10.bindPopup(popup_e6102d80d2c8eab76fc1bf32243f8923)
+        ;
+
+        
+    
+    
+            circle_marker_83434fd735ad178cd3480e4858e3df10.bindTooltip(
+                `<div>
+                     Ejisu Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3005b61ff832d942a87a53a97bd40f9d = L.circleMarker(
+                [6.2091, -1.6557],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_61e6f515588b616df469b9b8ef738579 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc456b9cf720c00c98cfc8e2b7414111 = $(`<div id="html_fc456b9cf720c00c98cfc8e2b7414111" style="width: 100.0%; height: 100.0%;">Substation: Obuasi Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_61e6f515588b616df469b9b8ef738579.setContent(html_fc456b9cf720c00c98cfc8e2b7414111);
+            
+        
+
+        circle_marker_3005b61ff832d942a87a53a97bd40f9d.bindPopup(popup_61e6f515588b616df469b9b8ef738579)
+        ;
+
+        
+    
+    
+            circle_marker_3005b61ff832d942a87a53a97bd40f9d.bindTooltip(
+                `<div>
+                     Obuasi Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e32225c675bda111f1462d77a611b2c = L.circleMarker(
+                [7.0553, -1.4029],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_2b25c22f66e65355df48d3fbeff09670 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da09ae7a3f360c24f9b1a60b2f225a02 = $(`<div id="html_da09ae7a3f360c24f9b1a60b2f225a02" style="width: 100.0%; height: 100.0%;">Substation: Mampong Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_2b25c22f66e65355df48d3fbeff09670.setContent(html_da09ae7a3f360c24f9b1a60b2f225a02);
+            
+        
+
+        circle_marker_9e32225c675bda111f1462d77a611b2c.bindPopup(popup_2b25c22f66e65355df48d3fbeff09670)
+        ;
+
+        
+    
+    
+            circle_marker_9e32225c675bda111f1462d77a611b2c.bindTooltip(
+                `<div>
+                     Mampong Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53d8f701abfcfacfef982cceb0a1c888 = L.circleMarker(
+                [6.6094, -1.2163],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_4d56013dc8f3f9428308f0feedeb7f57 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e2f34a92f9936bb2f93997877ade485 = $(`<div id="html_2e2f34a92f9936bb2f93997877ade485" style="width: 100.0%; height: 100.0%;">Substation: Konongo Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_4d56013dc8f3f9428308f0feedeb7f57.setContent(html_2e2f34a92f9936bb2f93997877ade485);
+            
+        
+
+        circle_marker_53d8f701abfcfacfef982cceb0a1c888.bindPopup(popup_4d56013dc8f3f9428308f0feedeb7f57)
+        ;
+
+        
+    
+    
+            circle_marker_53d8f701abfcfacfef982cceb0a1c888.bindTooltip(
+                `<div>
+                     Konongo Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23f8dcc90b89015a91653e19316f57bb = L.circleMarker(
+                [4.9048, -1.7562],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_98d4d12a1b1a19f0e57a55b177601b53 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1436a06bc5f5cafde1b76edd3b84cc13 = $(`<div id="html_1436a06bc5f5cafde1b76edd3b84cc13" style="width: 100.0%; height: 100.0%;">Substation: Takoradi Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_98d4d12a1b1a19f0e57a55b177601b53.setContent(html_1436a06bc5f5cafde1b76edd3b84cc13);
+            
+        
+
+        circle_marker_23f8dcc90b89015a91653e19316f57bb.bindPopup(popup_98d4d12a1b1a19f0e57a55b177601b53)
+        ;
+
+        
+    
+    
+            circle_marker_23f8dcc90b89015a91653e19316f57bb.bindTooltip(
+                `<div>
+                     Takoradi Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0578d2e415efa4019008ecf8d347aa00 = L.circleMarker(
+                [4.9905, -1.7714],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_5f081006ad782c5746cebf7510392db2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f722240050bca8ec582950124d663140 = $(`<div id="html_f722240050bca8ec582950124d663140" style="width: 100.0%; height: 100.0%;">Substation: Aboadze Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_5f081006ad782c5746cebf7510392db2.setContent(html_f722240050bca8ec582950124d663140);
+            
+        
+
+        circle_marker_0578d2e415efa4019008ecf8d347aa00.bindPopup(popup_5f081006ad782c5746cebf7510392db2)
+        ;
+
+        
+    
+    
+            circle_marker_0578d2e415efa4019008ecf8d347aa00.bindTooltip(
+                `<div>
+                     Aboadze Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4237d126d3b4dc2f2a995ec4c9e42e4d = L.circleMarker(
+                [5.3093, -1.9927],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_9e99193c894d6fac611367f924767ec2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f6e638f4d380dbd2fc4bf2204cb3e4d = $(`<div id="html_3f6e638f4d380dbd2fc4bf2204cb3e4d" style="width: 100.0%; height: 100.0%;">Substation: Tarkwa Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_9e99193c894d6fac611367f924767ec2.setContent(html_3f6e638f4d380dbd2fc4bf2204cb3e4d);
+            
+        
+
+        circle_marker_4237d126d3b4dc2f2a995ec4c9e42e4d.bindPopup(popup_9e99193c894d6fac611367f924767ec2)
+        ;
+
+        
+    
+    
+            circle_marker_4237d126d3b4dc2f2a995ec4c9e42e4d.bindTooltip(
+                `<div>
+                     Tarkwa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a10145600f1a99a3b18abc95425d71c4 = L.circleMarker(
+                [4.8747, -2.2381],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_f300a4527954bf65b890b835d95aefef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_696c405ddc054fb901a1cb6582c0cb95 = $(`<div id="html_696c405ddc054fb901a1cb6582c0cb95" style="width: 100.0%; height: 100.0%;">Substation: Axim Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_f300a4527954bf65b890b835d95aefef.setContent(html_696c405ddc054fb901a1cb6582c0cb95);
+            
+        
+
+        circle_marker_a10145600f1a99a3b18abc95425d71c4.bindPopup(popup_f300a4527954bf65b890b835d95aefef)
+        ;
+
+        
+    
+    
+            circle_marker_a10145600f1a99a3b18abc95425d71c4.bindTooltip(
+                `<div>
+                     Axim Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50c60f3b5a0548b4cfb74f64ac2b8f69 = L.circleMarker(
+                [5.1068, -1.2411],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_7081494465758de1810c4e962170f274 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_af9185e652f68ac9ba5305577b1f7051 = $(`<div id="html_af9185e652f68ac9ba5305577b1f7051" style="width: 100.0%; height: 100.0%;">Substation: Cape Coast Substation<br>Connected Lines: 5.0</div>`)[0];
+                popup_7081494465758de1810c4e962170f274.setContent(html_af9185e652f68ac9ba5305577b1f7051);
+            
+        
+
+        circle_marker_50c60f3b5a0548b4cfb74f64ac2b8f69.bindPopup(popup_7081494465758de1810c4e962170f274)
+        ;
+
+        
+    
+    
+            circle_marker_50c60f3b5a0548b4cfb74f64ac2b8f69.bindTooltip(
+                `<div>
+                     Cape Coast Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22fa7e7b45a69dd388363fe466ef6112 = L.circleMarker(
+                [5.362, -0.6218],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_f60caeb6986b2cfbeac289f77ae1c845 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc4659e50dd1f5ab180b223e2917ebc7 = $(`<div id="html_dc4659e50dd1f5ab180b223e2917ebc7" style="width: 100.0%; height: 100.0%;">Substation: Winneba Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_f60caeb6986b2cfbeac289f77ae1c845.setContent(html_dc4659e50dd1f5ab180b223e2917ebc7);
+            
+        
+
+        circle_marker_22fa7e7b45a69dd388363fe466ef6112.bindPopup(popup_f60caeb6986b2cfbeac289f77ae1c845)
+        ;
+
+        
+    
+    
+            circle_marker_22fa7e7b45a69dd388363fe466ef6112.bindTooltip(
+                `<div>
+                     Winneba Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_601ccc6f75bf9d7d84950774f41f19ba = L.circleMarker(
+                [5.5262, -0.4124],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_12800c19de581b4340f488875ca369cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91324a61f3ec1fc33f61a43b8de70677 = $(`<div id="html_91324a61f3ec1fc33f61a43b8de70677" style="width: 100.0%; height: 100.0%;">Substation: Kasoa Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_12800c19de581b4340f488875ca369cb.setContent(html_91324a61f3ec1fc33f61a43b8de70677);
+            
+        
+
+        circle_marker_601ccc6f75bf9d7d84950774f41f19ba.bindPopup(popup_12800c19de581b4340f488875ca369cb)
+        ;
+
+        
+    
+    
+            circle_marker_601ccc6f75bf9d7d84950774f41f19ba.bindTooltip(
+                `<div>
+                     Kasoa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4f33629351e8ec21c1f6b1253f299c01 = L.circleMarker(
+                [5.6984, -1.497],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_4e4c22cbc6fcd230c0e9620d5f62b842 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bea525e4d9b6e407dd9fc5a6d0243aab = $(`<div id="html_bea525e4d9b6e407dd9fc5a6d0243aab" style="width: 100.0%; height: 100.0%;">Substation: Assin Fosu Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_4e4c22cbc6fcd230c0e9620d5f62b842.setContent(html_bea525e4d9b6e407dd9fc5a6d0243aab);
+            
+        
+
+        circle_marker_4f33629351e8ec21c1f6b1253f299c01.bindPopup(popup_4e4c22cbc6fcd230c0e9620d5f62b842)
+        ;
+
+        
+    
+    
+            circle_marker_4f33629351e8ec21c1f6b1253f299c01.bindTooltip(
+                `<div>
+                     Assin Fosu Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc964d57f33f5c4bbc405076ba3b12cc = L.circleMarker(
+                [6.1017, -0.254],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_7cd33447d7f367871ed7ef5adeee55cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be12301c748773355182bec08fb218ff = $(`<div id="html_be12301c748773355182bec08fb218ff" style="width: 100.0%; height: 100.0%;">Substation: Koforidua Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_7cd33447d7f367871ed7ef5adeee55cd.setContent(html_be12301c748773355182bec08fb218ff);
+            
+        
+
+        circle_marker_cc964d57f33f5c4bbc405076ba3b12cc.bindPopup(popup_7cd33447d7f367871ed7ef5adeee55cd)
+        ;
+
+        
+    
+    
+            circle_marker_cc964d57f33f5c4bbc405076ba3b12cc.bindTooltip(
+                `<div>
+                     Koforidua Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d370e4b7906f59eb180afcfea4742030 = L.circleMarker(
+                [6.2991, 0.0641],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_21ef0328679a500a64d1ae25ee017dbf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_58ff1f99baf3d991fa22d2e953155694 = $(`<div id="html_58ff1f99baf3d991fa22d2e953155694" style="width: 100.0%; height: 100.0%;">Substation: Akosombo Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_21ef0328679a500a64d1ae25ee017dbf.setContent(html_58ff1f99baf3d991fa22d2e953155694);
+            
+        
+
+        circle_marker_d370e4b7906f59eb180afcfea4742030.bindPopup(popup_21ef0328679a500a64d1ae25ee017dbf)
+        ;
+
+        
+    
+    
+            circle_marker_d370e4b7906f59eb180afcfea4742030.bindTooltip(
+                `<div>
+                     Akosombo Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4650f9305f02b62ffc533a3cd8017d10 = L.circleMarker(
+                [6.5502, -0.7749],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_a348afe7021e083c7983a18355a563e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1eed36634d736784aff7721f4127e16 = $(`<div id="html_f1eed36634d736784aff7721f4127e16" style="width: 100.0%; height: 100.0%;">Substation: Nkawkaw Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_a348afe7021e083c7983a18355a563e0.setContent(html_f1eed36634d736784aff7721f4127e16);
+            
+        
+
+        circle_marker_4650f9305f02b62ffc533a3cd8017d10.bindPopup(popup_a348afe7021e083c7983a18355a563e0)
+        ;
+
+        
+    
+    
+            circle_marker_4650f9305f02b62ffc533a3cd8017d10.bindTooltip(
+                `<div>
+                     Nkawkaw Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b60c83e0b0de583ba777888c33d0717c = L.circleMarker(
+                [6.035, -0.4535],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_937d265c876238719b8d3cb6ea226422 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9523133d707c653b7c569e998c97bbc0 = $(`<div id="html_9523133d707c653b7c569e998c97bbc0" style="width: 100.0%; height: 100.0%;">Substation: Suhum Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_937d265c876238719b8d3cb6ea226422.setContent(html_9523133d707c653b7c569e998c97bbc0);
+            
+        
+
+        circle_marker_b60c83e0b0de583ba777888c33d0717c.bindPopup(popup_937d265c876238719b8d3cb6ea226422)
+        ;
+
+        
+    
+    
+            circle_marker_b60c83e0b0de583ba777888c33d0717c.bindTooltip(
+                `<div>
+                     Suhum Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9307f2e150b35c93023588ae64e9fb59 = L.circleMarker(
+                [6.6194, 0.473],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_98b8bce4b5d4f22575f77d5f73316447 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a1ff363dc05694999224a9dabb9c845 = $(`<div id="html_1a1ff363dc05694999224a9dabb9c845" style="width: 100.0%; height: 100.0%;">Substation: Ho Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_98b8bce4b5d4f22575f77d5f73316447.setContent(html_1a1ff363dc05694999224a9dabb9c845);
+            
+        
+
+        circle_marker_9307f2e150b35c93023588ae64e9fb59.bindPopup(popup_98b8bce4b5d4f22575f77d5f73316447)
+        ;
+
+        
+    
+    
+            circle_marker_9307f2e150b35c93023588ae64e9fb59.bindTooltip(
+                `<div>
+                     Ho Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_481ed53aff697283e876d27406c101a1 = L.circleMarker(
+                [6.1597, 0.1061],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_d1a719134f57571c2f8d1f1b2ce7aded = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_031f333f512dc228a1b52dfbd037f4ba = $(`<div id="html_031f333f512dc228a1b52dfbd037f4ba" style="width: 100.0%; height: 100.0%;">Substation: Kpong Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_d1a719134f57571c2f8d1f1b2ce7aded.setContent(html_031f333f512dc228a1b52dfbd037f4ba);
+            
+        
+
+        circle_marker_481ed53aff697283e876d27406c101a1.bindPopup(popup_d1a719134f57571c2f8d1f1b2ce7aded)
+        ;
+
+        
+    
+    
+            circle_marker_481ed53aff697283e876d27406c101a1.bindTooltip(
+                `<div>
+                     Kpong Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_352e9e2cc5eb97da733a19ea1440533a = L.circleMarker(
+                [7.1436, 0.4766],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_ce214d6ae8a8fcf84d35a75211ddfa03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fcaf15d0a296d4f2d47a11c71f187dd9 = $(`<div id="html_fcaf15d0a296d4f2d47a11c71f187dd9" style="width: 100.0%; height: 100.0%;">Substation: Hohoe Substation<br>Connected Lines: 1.0</div>`)[0];
+                popup_ce214d6ae8a8fcf84d35a75211ddfa03.setContent(html_fcaf15d0a296d4f2d47a11c71f187dd9);
+            
+        
+
+        circle_marker_352e9e2cc5eb97da733a19ea1440533a.bindPopup(popup_ce214d6ae8a8fcf84d35a75211ddfa03)
+        ;
+
+        
+    
+    
+            circle_marker_352e9e2cc5eb97da733a19ea1440533a.bindTooltip(
+                `<div>
+                     Hohoe Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_267c2c45dbba6caaad91c1d54cb16308 = L.circleMarker(
+                [5.9995, 0.5762],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_505132c37f0c817ed9b85437431cb831 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b3f85dc953bd0f3ba08f0fdfa14c51f6 = $(`<div id="html_b3f85dc953bd0f3ba08f0fdfa14c51f6" style="width: 100.0%; height: 100.0%;">Substation: Sogakope Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_505132c37f0c817ed9b85437431cb831.setContent(html_b3f85dc953bd0f3ba08f0fdfa14c51f6);
+            
+        
+
+        circle_marker_267c2c45dbba6caaad91c1d54cb16308.bindPopup(popup_505132c37f0c817ed9b85437431cb831)
+        ;
+
+        
+    
+    
+            circle_marker_267c2c45dbba6caaad91c1d54cb16308.bindTooltip(
+                `<div>
+                     Sogakope Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aa204fe989f17f1cf5dd08f14b8d369b = L.circleMarker(
+                [7.3375, -2.3318],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_45d32fb05fcee6130dbd7a1f0e83df6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6a37b8d19d0c56bc63e2a59ee0027d4 = $(`<div id="html_a6a37b8d19d0c56bc63e2a59ee0027d4" style="width: 100.0%; height: 100.0%;">Substation: Sunyani Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_45d32fb05fcee6130dbd7a1f0e83df6b.setContent(html_a6a37b8d19d0c56bc63e2a59ee0027d4);
+            
+        
+
+        circle_marker_aa204fe989f17f1cf5dd08f14b8d369b.bindPopup(popup_45d32fb05fcee6130dbd7a1f0e83df6b)
+        ;
+
+        
+    
+    
+            circle_marker_aa204fe989f17f1cf5dd08f14b8d369b.bindTooltip(
+                `<div>
+                     Sunyani Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e382f642346b0f316028f54870514b5 = L.circleMarker(
+                [7.5934, -1.9405],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_0c41351641836ab72401a97f105cc348 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9dd94a263f2797f97e99eb1ca972c70 = $(`<div id="html_d9dd94a263f2797f97e99eb1ca972c70" style="width: 100.0%; height: 100.0%;">Substation: Techiman Substation<br>Connected Lines: 2.0</div>`)[0];
+                popup_0c41351641836ab72401a97f105cc348.setContent(html_d9dd94a263f2797f97e99eb1ca972c70);
+            
+        
+
+        circle_marker_2e382f642346b0f316028f54870514b5.bindPopup(popup_0c41351641836ab72401a97f105cc348)
+        ;
+
+        
+    
+    
+            circle_marker_2e382f642346b0f316028f54870514b5.bindTooltip(
+                `<div>
+                     Techiman Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_42557a40327d95ab97dd04ae589d834a = L.circleMarker(
+                [7.4443, -2.5946],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_94b772436fbe2a7fb3cb4b7982f8f206 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73c1623435eda646629c82826304e1d5 = $(`<div id="html_73c1623435eda646629c82826304e1d5" style="width: 100.0%; height: 100.0%;">Substation: Berekum Substation<br>Connected Lines: 1.0</div>`)[0];
+                popup_94b772436fbe2a7fb3cb4b7982f8f206.setContent(html_73c1623435eda646629c82826304e1d5);
+            
+        
+
+        circle_marker_42557a40327d95ab97dd04ae589d834a.bindPopup(popup_94b772436fbe2a7fb3cb4b7982f8f206)
+        ;
+
+        
+    
+    
+            circle_marker_42557a40327d95ab97dd04ae589d834a.bindTooltip(
+                `<div>
+                     Berekum Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d59176a42136c70227399b9b3e925b4 = L.circleMarker(
+                [9.4072, -0.8508],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_18f32e0bfbe1a5621ddd42bc0c878736 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d008359e8ca505d87372d53844180778 = $(`<div id="html_d008359e8ca505d87372d53844180778" style="width: 100.0%; height: 100.0%;">Substation: Tamale Substation<br>Connected Lines: 3.0</div>`)[0];
+                popup_18f32e0bfbe1a5621ddd42bc0c878736.setContent(html_d008359e8ca505d87372d53844180778);
+            
+        
+
+        circle_marker_0d59176a42136c70227399b9b3e925b4.bindPopup(popup_18f32e0bfbe1a5621ddd42bc0c878736)
+        ;
+
+        
+    
+    
+            circle_marker_0d59176a42136c70227399b9b3e925b4.bindTooltip(
+                `<div>
+                     Tamale Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc578e824df656d0658b5a047966bba5 = L.circleMarker(
+                [9.4368, -0.0076],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_0a4bba5e8dc96e8e771242743105eac2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e074d53fefed8fea7e438942ea7947a = $(`<div id="html_5e074d53fefed8fea7e438942ea7947a" style="width: 100.0%; height: 100.0%;">Substation: Yendi Substation<br>Connected Lines: 1.0</div>`)[0];
+                popup_0a4bba5e8dc96e8e771242743105eac2.setContent(html_5e074d53fefed8fea7e438942ea7947a);
+            
+        
+
+        circle_marker_dc578e824df656d0658b5a047966bba5.bindPopup(popup_0a4bba5e8dc96e8e771242743105eac2)
+        ;
+
+        
+    
+    
+            circle_marker_dc578e824df656d0658b5a047966bba5.bindTooltip(
+                `<div>
+                     Yendi Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9c771774c62717cdfe4b34a92b74eb4 = L.circleMarker(
+                [9.6264, -0.8265],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_dfd15d8889eae561f027e8fed96a1be8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bfef717007003b6de3775b178fd5670 = $(`<div id="html_0bfef717007003b6de3775b178fd5670" style="width: 100.0%; height: 100.0%;">Substation: Savelugu Substation<br>Connected Lines: 0.0</div>`)[0];
+                popup_dfd15d8889eae561f027e8fed96a1be8.setContent(html_0bfef717007003b6de3775b178fd5670);
+            
+        
+
+        circle_marker_a9c771774c62717cdfe4b34a92b74eb4.bindPopup(popup_dfd15d8889eae561f027e8fed96a1be8)
+        ;
+
+        
+    
+    
+            circle_marker_a9c771774c62717cdfe4b34a92b74eb4.bindTooltip(
+                `<div>
+                     Savelugu Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_411713167d47c09bc36cff5b22519784 = L.circleMarker(
+                [10.7789, -0.8524],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_d14ed8323f254c03dfe1808aebe6b773 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc67fb51f426c8deca4a9d8be40e99f3 = $(`<div id="html_cc67fb51f426c8deca4a9d8be40e99f3" style="width: 100.0%; height: 100.0%;">Substation: Bolgatanga Substation<br>Connected Lines: 4.0</div>`)[0];
+                popup_d14ed8323f254c03dfe1808aebe6b773.setContent(html_cc67fb51f426c8deca4a9d8be40e99f3);
+            
+        
+
+        circle_marker_411713167d47c09bc36cff5b22519784.bindPopup(popup_d14ed8323f254c03dfe1808aebe6b773)
+        ;
+
+        
+    
+    
+            circle_marker_411713167d47c09bc36cff5b22519784.bindTooltip(
+                `<div>
+                     Bolgatanga Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70f1f9fa3c34a70ef894ab080bbce9c0 = L.circleMarker(
+                [11.0615, -0.2333],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_2c50b928c98d7e155360f7810b420ca6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc0d23d212a220b185af1dd3071b8fd2 = $(`<div id="html_fc0d23d212a220b185af1dd3071b8fd2" style="width: 100.0%; height: 100.0%;">Substation: Bawku Substation<br>Connected Lines: 1.0</div>`)[0];
+                popup_2c50b928c98d7e155360f7810b420ca6.setContent(html_fc0d23d212a220b185af1dd3071b8fd2);
+            
+        
+
+        circle_marker_70f1f9fa3c34a70ef894ab080bbce9c0.bindPopup(popup_2c50b928c98d7e155360f7810b420ca6)
+        ;
+
+        
+    
+    
+            circle_marker_70f1f9fa3c34a70ef894ab080bbce9c0.bindTooltip(
+                `<div>
+                     Bawku Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eaf80836e6a45bcc2f8487a587808912 = L.circleMarker(
+                [10.0682, -2.506],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_6919054580efd4aa38d573a71871b235 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56a81d9faec0d526cc499ea92aebf687 = $(`<div id="html_56a81d9faec0d526cc499ea92aebf687" style="width: 100.0%; height: 100.0%;">Substation: Wa Substation<br>Connected Lines: 1.0</div>`)[0];
+                popup_6919054580efd4aa38d573a71871b235.setContent(html_56a81d9faec0d526cc499ea92aebf687);
+            
+        
+
+        circle_marker_eaf80836e6a45bcc2f8487a587808912.bindPopup(popup_6919054580efd4aa38d573a71871b235)
+        ;
+
+        
+    
+    
+            circle_marker_eaf80836e6a45bcc2f8487a587808912.bindTooltip(
+                `<div>
+                     Wa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4cb861a8a81d07eaa07c8489f09f7fb2 = L.circleMarker(
+                [11.2, -0.75],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_b3603b7c37528d81c10fbfe4dc8083c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_620682ba71b508792b1b8fa38d32e116 = $(`<div id="html_620682ba71b508792b1b8fa38d32e116" style="width: 100.0%; height: 100.0%;">Substation: Bolgatanga Interconnection<br>Connected Lines: 2.0</div>`)[0];
+                popup_b3603b7c37528d81c10fbfe4dc8083c7.setContent(html_620682ba71b508792b1b8fa38d32e116);
+            
+        
+
+        circle_marker_4cb861a8a81d07eaa07c8489f09f7fb2.bindPopup(popup_b3603b7c37528d81c10fbfe4dc8083c7)
+        ;
+
+        
+    
+    
+            circle_marker_4cb861a8a81d07eaa07c8489f09f7fb2.bindTooltip(
+                `<div>
+                     Bolgatanga Interconnection
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7a03b0d995836b4e344a0056ab75f57 = L.circleMarker(
+                [5.2, -2.85],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_a73b7c7116ce0e79cc7eb5d84b59eeff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a7170871e221cf418a6067227a2022a = $(`<div id="html_8a7170871e221cf418a6067227a2022a" style="width: 100.0%; height: 100.0%;">Substation: Elubo Border Station<br>Connected Lines: 2.0</div>`)[0];
+                popup_a73b7c7116ce0e79cc7eb5d84b59eeff.setContent(html_8a7170871e221cf418a6067227a2022a);
+            
+        
+
+        circle_marker_d7a03b0d995836b4e344a0056ab75f57.bindPopup(popup_a73b7c7116ce0e79cc7eb5d84b59eeff)
+        ;
+
+        
+    
+    
+            circle_marker_d7a03b0d995836b4e344a0056ab75f57.bindTooltip(
+                `<div>
+                     Elubo Border Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aca1fc0f27fc7f0694b2a950c79a6336 = L.circleMarker(
+                [6.12, 1.19],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_867b965ec07ad7e2cf9d6c0f99b261ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3db59a94c22bd48837f4a7cded445989 = $(`<div id="html_3db59a94c22bd48837f4a7cded445989" style="width: 100.0%; height: 100.0%;">Substation: Aflao Border Station<br>Connected Lines: 2.0</div>`)[0];
+                popup_867b965ec07ad7e2cf9d6c0f99b261ea.setContent(html_3db59a94c22bd48837f4a7cded445989);
+            
+        
+
+        circle_marker_aca1fc0f27fc7f0694b2a950c79a6336.bindPopup(popup_867b965ec07ad7e2cf9d6c0f99b261ea)
+        ;
+
+        
+    
+    
+            circle_marker_aca1fc0f27fc7f0694b2a950c79a6336.bindTooltip(
+                `<div>
+                     Aflao Border Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e8e87bc21fbd01d8ba0467052016c439 = L.circleMarker(
+                [6.13, 1.22],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_b328148d5ab79bda18dc04e82bbaf0b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eddadadb885ee85f7e344b38fc077b35 = $(`<div id="html_eddadadb885ee85f7e344b38fc077b35" style="width: 100.0%; height: 100.0%;">Substation: Lome Transmission Hub<br>Connected Lines: 2.0</div>`)[0];
+                popup_b328148d5ab79bda18dc04e82bbaf0b5.setContent(html_eddadadb885ee85f7e344b38fc077b35);
+            
+        
+
+        circle_marker_e8e87bc21fbd01d8ba0467052016c439.bindPopup(popup_b328148d5ab79bda18dc04e82bbaf0b5)
+        ;
+
+        
+    
+    
+            circle_marker_e8e87bc21fbd01d8ba0467052016c439.bindTooltip(
+                `<div>
+                     Lome Transmission Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17392dd70d2eb132b13fe1c39c3d9946 = L.circleMarker(
+                [6.37, 2.43],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_1d7bd804a8fd967ca0315931f631ea25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6401670b912bb225f93f5c56bbf17b99 = $(`<div id="html_6401670b912bb225f93f5c56bbf17b99" style="width: 100.0%; height: 100.0%;">Substation: Cotonou Transmission Hub<br>Connected Lines: 1.0</div>`)[0];
+                popup_1d7bd804a8fd967ca0315931f631ea25.setContent(html_6401670b912bb225f93f5c56bbf17b99);
+            
+        
+
+        circle_marker_17392dd70d2eb132b13fe1c39c3d9946.bindPopup(popup_1d7bd804a8fd967ca0315931f631ea25)
+        ;
+
+        
+    
+    
+            circle_marker_17392dd70d2eb132b13fe1c39c3d9946.bindTooltip(
+                `<div>
+                     Cotonou Transmission Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f20716bf00ad78d9aaa00daeead1eb7 = L.circleMarker(
+                [5.35, -4.0],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_2425627c881b9d9ca7aa35839b093560 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d041828f6e746bdb1379aea725fd0a6f = $(`<div id="html_d041828f6e746bdb1379aea725fd0a6f" style="width: 100.0%; height: 100.0%;">Substation: Abidjan Transmission Hub<br>Connected Lines: 1.0</div>`)[0];
+                popup_2425627c881b9d9ca7aa35839b093560.setContent(html_d041828f6e746bdb1379aea725fd0a6f);
+            
+        
+
+        circle_marker_1f20716bf00ad78d9aaa00daeead1eb7.bindPopup(popup_2425627c881b9d9ca7aa35839b093560)
+        ;
+
+        
+    
+    
+            circle_marker_1f20716bf00ad78d9aaa00daeead1eb7.bindTooltip(
+                `<div>
+                     Abidjan Transmission Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a20797f540d360118b3692a185589380 = L.circleMarker(
+                [11.18, -4.3],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_9198c2436c759e7a4f62cd0b2a9ad433 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf1500dd21606f05951d1f10d6f23209 = $(`<div id="html_bf1500dd21606f05951d1f10d6f23209" style="width: 100.0%; height: 100.0%;">Substation: Bobo-Dioulasso Hub<br>Connected Lines: 1.0</div>`)[0];
+                popup_9198c2436c759e7a4f62cd0b2a9ad433.setContent(html_bf1500dd21606f05951d1f10d6f23209);
+            
+        
+
+        circle_marker_a20797f540d360118b3692a185589380.bindPopup(popup_9198c2436c759e7a4f62cd0b2a9ad433)
+        ;
+
+        
+    
+    
+            circle_marker_a20797f540d360118b3692a185589380.bindTooltip(
+                `<div>
+                     Bobo-Dioulasso Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0e59ea3bff25cc3c191aab9c1897c65 = L.circleMarker(
+                [9.64, -13.58],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_2ae3e8d5c9a949aa4339bc5e51a90eb8);
+        
+    
+        var popup_41061a09ff78994767dd04570892b6ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7a02c6772a5c863a87e3d18a5eacf14 = $(`<div id="html_b7a02c6772a5c863a87e3d18a5eacf14" style="width: 100.0%; height: 100.0%;">Substation: Conakry Transmission Hub<br>Connected Lines: 0.0</div>`)[0];
+                popup_41061a09ff78994767dd04570892b6ea.setContent(html_b7a02c6772a5c863a87e3d18a5eacf14);
+            
+        
+
+        circle_marker_d0e59ea3bff25cc3c191aab9c1897c65.bindPopup(popup_41061a09ff78994767dd04570892b6ea)
+        ;
+
+        
+    
+    
+            circle_marker_d0e59ea3bff25cc3c191aab9c1897c65.bindTooltip(
+                `<div>
+                     Conakry Transmission Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

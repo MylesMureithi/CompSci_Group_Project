@@ -87,14 +87,28 @@ print()
 print(gaps)
 
 # - Map each utility's line network
+min_lat, max_lat = 37, 34
+min_lon, max_lon = 17, 51
+
+m = folium.Map(
+    max_bounds=True,
+    location=[-20, -40],
+    zoom_start=6,
+    min_lon=min_lon,
+    max_lon=max_lon,
+    min_lat=min_lat,
+    max_lat=max_lat,
+   
+    
+)
+
+folium.CircleMarker([max_lat, min_lon], tooltip="Upper Left Corner").add_to(m)
+folium.CircleMarker([min_lat, min_lon], tooltip="Lower Left Corner").add_to(m)
+folium.CircleMarker([min_lat, max_lon], tooltip="Lower Right Corner").add_to(m)
+folium.CircleMarker([max_lat, max_lon], tooltip="Upper Right Corner").add_to(m)
+
+m.save("m.html")
 
 
-
-
-
- 
-# Spatial visualizations
-# - National map with all substations colored by voltage level
-# - Line-density heatmaps
 # - Utility-specific network maps
 # - Regional and cross-border connectivity analysis

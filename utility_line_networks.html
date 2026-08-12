@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_13df919da2c136d3e90657619398fc05 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_13df919da2c136d3e90657619398fc05" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_13df919da2c136d3e90657619398fc05 = L.map(
+                "map_13df919da2c136d3e90657619398fc05",
+                {
+                    center: [6.898402272727273, -1.1948681818181817],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_97e77688f394dd87029cbd822e4e5926 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_97e77688f394dd87029cbd822e4e5926.addTo(map_13df919da2c136d3e90657619398fc05);
+        
+    
+            var feature_group_d121088af0bfdf251067ded09772241a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_7d7374d685dcb9fce27bc1ca0e9193e2 = L.polyline(
+                [[5.6085, -0.2193], [5.6596, -0.0226]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_7d7374d685dcb9fce27bc1ca0e9193e2.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Achimota Substation -> Tema Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1158aefaca09d7c63e97f4c44797b008 = L.polyline(
+                [[5.6085, -0.2193], [5.563, -0.2971]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_1158aefaca09d7c63e97f4c44797b008.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Achimota Substation -> Mallam Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_648419f982a157cf66661bfae65efbcb = L.polyline(
+                [[5.563, -0.2971], [5.6401, -0.1799]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_648419f982a157cf66661bfae65efbcb.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Mallam Substation -> Legon Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c4c72aceaa8bc47e7aaa2cfd83af90a3 = L.polyline(
+                [[5.6401, -0.1799], [5.5921, -0.1439]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_c4c72aceaa8bc47e7aaa2cfd83af90a3.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Legon Substation -> Aboadze Junction Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_76216508e198156e242fa834ffd703cc = L.polyline(
+                [[6.7128, -1.4716], [6.2091, -1.6557]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_76216508e198156e242fa834ffd703cc.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Ejisu Substation -> Obuasi Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3fe33e00d7c7686bfed5ebc157a1aac2 = L.polyline(
+                [[6.7128, -1.4716], [6.6094, -1.2163]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_3fe33e00d7c7686bfed5ebc157a1aac2.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Ejisu Substation -> Konongo Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6268ab09a4a57b8a5abb1d317d44f919 = L.polyline(
+                [[7.0553, -1.4029], [6.6094, -1.2163]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_6268ab09a4a57b8a5abb1d317d44f919.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Mampong Substation -> Konongo Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_10672e9e4791a27abfe526eb5dacc186 = L.polyline(
+                [[4.9905, -1.7714], [4.8747, -2.2381]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_10672e9e4791a27abfe526eb5dacc186.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Aboadze Substation -> Axim Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c6b9fe7dc1a1b1912e6d50dcaec65f42 = L.polyline(
+                [[5.1068, -1.2411], [5.362, -0.6218]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_c6b9fe7dc1a1b1912e6d50dcaec65f42.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Cape Coast Substation -> Winneba Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fa8024ea36f182c4bd6bbff8b3f49306 = L.polyline(
+                [[5.362, -0.6218], [5.5262, -0.4124]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_fa8024ea36f182c4bd6bbff8b3f49306.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Winneba Substation -> Kasoa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e0aa62f45ca4b263cc824b6a78c5a3b4 = L.polyline(
+                [[5.5262, -0.4124], [5.6984, -1.497]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_e0aa62f45ca4b263cc824b6a78c5a3b4.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Kasoa Substation -> Assin Fosu Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ab5bfa96030d0ff03cdd152df1574d3b = L.polyline(
+                [[6.2991, 0.0641], [6.5502, -0.7749]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_ab5bfa96030d0ff03cdd152df1574d3b.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Akosombo Substation -> Nkawkaw Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_21772859362d0afda4487ea5cee31719 = L.polyline(
+                [[6.6194, 0.473], [6.1597, 0.1061]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_21772859362d0afda4487ea5cee31719.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Ho Substation -> Kpong Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_92d80a9ca7cfe6c071cc654dba97d683 = L.polyline(
+                [[9.4072, -0.8508], [9.4368, -0.0076]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_d121088af0bfdf251067ded09772241a);
+        
+    
+            poly_line_92d80a9ca7cfe6c071cc654dba97d683.bindTooltip(
+                `<div>
+                     Northern Electricity Distribution Company: Tamale Substation -> Yendi Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_d121088af0bfdf251067ded09772241a.addTo(map_13df919da2c136d3e90657619398fc05);
+        
+    
+            var feature_group_6b8d1700b3b0960c3641909eface9395 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_b171e529ab3ea10ce497564b96a28630 = L.polyline(
+                [[5.6085, -0.2193], [5.5691, -0.2413]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_b171e529ab3ea10ce497564b96a28630.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Achimota Substation -> Kaneshie Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_72726a29a5f5fcaf6032e52212d0aa51 = L.polyline(
+                [[5.6596, -0.0226], [5.6401, -0.1799]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_72726a29a5f5fcaf6032e52212d0aa51.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Tema Substation -> Legon Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f90aacf01bcf3622b5857c3531abb95d = L.polyline(
+                [[5.563, -0.2971], [5.5691, -0.2413]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_f90aacf01bcf3622b5857c3531abb95d.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Mallam Substation -> Kaneshie Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_476d59f567c35219b3b1bf876e7595b6 = L.polyline(
+                [[5.563, -0.2971], [5.5921, -0.1439]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_476d59f567c35219b3b1bf876e7595b6.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Mallam Substation -> Aboadze Junction Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_32f4ea625a8e3f9d8037565e5befb7eb = L.polyline(
+                [[6.6856, -1.623], [6.6094, -1.2163]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_32f4ea625a8e3f9d8037565e5befb7eb.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Kumasi Central Substation -> Konongo Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0897dfb60931537d94e161fb1c66715a = L.polyline(
+                [[4.9048, -1.7562], [5.3093, -1.9927]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_0897dfb60931537d94e161fb1c66715a.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Takoradi Substation -> Tarkwa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7cef7e4374bca23b13703ec4776d7c1e = L.polyline(
+                [[5.3093, -1.9927], [4.8747, -2.2381]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_7cef7e4374bca23b13703ec4776d7c1e.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Tarkwa Substation -> Axim Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b026105295474cb6e8bf92933d381fad = L.polyline(
+                [[5.1068, -1.2411], [5.6984, -1.497]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_b026105295474cb6e8bf92933d381fad.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Cape Coast Substation -> Assin Fosu Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_afec2eea36e2893cf9d4506543f16f72 = L.polyline(
+                [[6.1017, -0.254], [6.2991, 0.0641]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_afec2eea36e2893cf9d4506543f16f72.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Koforidua Substation -> Akosombo Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_40e8504b9bfb0b71f5a39f47e6c3b5ad = L.polyline(
+                [[6.2991, 0.0641], [6.035, -0.4535]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_40e8504b9bfb0b71f5a39f47e6c3b5ad.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Akosombo Substation -> Suhum Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2e62afb13a0ac81317819578eca65c25 = L.polyline(
+                [[6.6194, 0.473], [5.9995, 0.5762]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_2e62afb13a0ac81317819578eca65c25.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Ho Substation -> Sogakope Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_34efcd5f0634528cfa4dbce5a2907561 = L.polyline(
+                [[7.1436, 0.4766], [5.9995, 0.5762]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_34efcd5f0634528cfa4dbce5a2907561.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Hohoe Substation -> Sogakope Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_33800ec9327813e8bb9418363713f90d = L.polyline(
+                [[7.3375, -2.3318], [7.5934, -1.9405]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_33800ec9327813e8bb9418363713f90d.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Sunyani Substation -> Techiman Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_44145cc562b73a76ab8d8c7b88bbaf3d = L.polyline(
+                [[7.5934, -1.9405], [7.4443, -2.5946]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_44145cc562b73a76ab8d8c7b88bbaf3d.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Techiman Substation -> Berekum Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_30bafaf5bc60c8883fea6d214d756531 = L.polyline(
+                [[10.7789, -0.8524], [11.0615, -0.2333]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_30bafaf5bc60c8883fea6d214d756531.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Bolgatanga Substation -> Bawku Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8fd6687069fce260d92c6e52e808bb94 = L.polyline(
+                [[5.6085, -0.2193], [6.6856, -1.623]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_8fd6687069fce260d92c6e52e808bb94.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Achimota Substation -> Kumasi Central Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_aeafea7ed99653bb6501e498f6a8738e = L.polyline(
+                [[6.6856, -1.623], [4.9048, -1.7562]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_aeafea7ed99653bb6501e498f6a8738e.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Kumasi Central Substation -> Takoradi Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_95f65925bef99a6f168c464219681f57 = L.polyline(
+                [[4.9048, -1.7562], [5.1068, -1.2411]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_95f65925bef99a6f168c464219681f57.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Takoradi Substation -> Cape Coast Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dcbbe5be33276873dfc709aa5f3d49c2 = L.polyline(
+                [[5.1068, -1.2411], [6.1017, -0.254]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_dcbbe5be33276873dfc709aa5f3d49c2.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Cape Coast Substation -> Koforidua Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_96bb0f664f31cc245616415fc1e3f47b = L.polyline(
+                [[6.1017, -0.254], [6.6194, 0.473]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_96bb0f664f31cc245616415fc1e3f47b.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Koforidua Substation -> Ho Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f055998ffcf2e30e46c5f83511ae608f = L.polyline(
+                [[6.6194, 0.473], [7.3375, -2.3318]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_f055998ffcf2e30e46c5f83511ae608f.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Ho Substation -> Sunyani Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a80073fdaeb8bf0b9a097c26afe4a30a = L.polyline(
+                [[7.3375, -2.3318], [9.4072, -0.8508]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_a80073fdaeb8bf0b9a097c26afe4a30a.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Sunyani Substation -> Tamale Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3fc62f07e18a05fb08245160bd4a704e = L.polyline(
+                [[9.4072, -0.8508], [10.7789, -0.8524]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_3fc62f07e18a05fb08245160bd4a704e.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Tamale Substation -> Bolgatanga Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a497035a67c8c743afc94d824587c5d3 = L.polyline(
+                [[10.7789, -0.8524], [10.0682, -2.506]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b8d1700b3b0960c3641909eface9395);
+        
+    
+            poly_line_a497035a67c8c743afc94d824587c5d3.bindTooltip(
+                `<div>
+                     Ghana Grid Company: Bolgatanga Substation -> Wa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_6b8d1700b3b0960c3641909eface9395.addTo(map_13df919da2c136d3e90657619398fc05);
+        
+    
+            var feature_group_5b70ccc1d8ca81c12b28cfcca33380be = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_7c1eeab3e448ed0f33dbd69d1a18de60 = L.polyline(
+                [[5.6596, -0.0226], [5.563, -0.2971]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_7c1eeab3e448ed0f33dbd69d1a18de60.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Tema Substation -> Mallam Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e103e1d3f07070bcff7efbe8436efccd = L.polyline(
+                [[5.6401, -0.1799], [5.5691, -0.2413]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_e103e1d3f07070bcff7efbe8436efccd.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Legon Substation -> Kaneshie Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1ac44991f6b7f61724644cb7223958d9 = L.polyline(
+                [[6.6856, -1.623], [7.0553, -1.4029]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_1ac44991f6b7f61724644cb7223958d9.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Kumasi Central Substation -> Mampong Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f70ee31af1f5fece3395e86451a0aed3 = L.polyline(
+                [[6.2091, -1.6557], [6.6094, -1.2163]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_f70ee31af1f5fece3395e86451a0aed3.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Obuasi Substation -> Konongo Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_13932319fa6b2b72d5f5ace452807397 = L.polyline(
+                [[4.9048, -1.7562], [4.9905, -1.7714]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_13932319fa6b2b72d5f5ace452807397.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Takoradi Substation -> Aboadze Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_13d71b2a435a9839ee79adeb224d8f70 = L.polyline(
+                [[4.9905, -1.7714], [5.3093, -1.9927]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_13d71b2a435a9839ee79adeb224d8f70.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Aboadze Substation -> Tarkwa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_53e22810f9ddbb89f3ac47e0911c1964 = L.polyline(
+                [[5.1068, -1.2411], [5.5262, -0.4124]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_53e22810f9ddbb89f3ac47e0911c1964.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Cape Coast Substation -> Kasoa Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c1a8ba16e1caa7e93369849a4c5aa464 = L.polyline(
+                [[6.1017, -0.254], [6.5502, -0.7749]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_c1a8ba16e1caa7e93369849a4c5aa464.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Koforidua Substation -> Nkawkaw Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0795440274f2f141b821f5b1ba27d62a = L.polyline(
+                [[6.5502, -0.7749], [6.035, -0.4535]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_0795440274f2f141b821f5b1ba27d62a.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Nkawkaw Substation -> Suhum Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f6d1667c5b12b73c0294f1fd07859919 = L.polyline(
+                [[6.1597, 0.1061], [5.9995, 0.5762]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_5b70ccc1d8ca81c12b28cfcca33380be);
+        
+    
+            poly_line_f6d1667c5b12b73c0294f1fd07859919.bindTooltip(
+                `<div>
+                     Electricity Company of Ghana: Kpong Substation -> Sogakope Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_5b70ccc1d8ca81c12b28cfcca33380be.addTo(map_13df919da2c136d3e90657619398fc05);
+        
+    
+            var feature_group_b9268cdc0ef942157ab8279bf64312f7 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_566b7e00d0dc83c766a0f98b18bc4ca4 = L.polyline(
+                [[10.7789, -0.8524], [11.2, -0.75]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_b9268cdc0ef942157ab8279bf64312f7);
+        
+    
+            poly_line_566b7e00d0dc83c766a0f98b18bc4ca4.bindTooltip(
+                `<div>
+                     Sonabel: Bolgatanga Substation -> Bolgatanga Interconnection
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_91a5cb0bb744fd6610c35e46af90b319 = L.polyline(
+                [[11.2, -0.75], [11.18, -4.3]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_b9268cdc0ef942157ab8279bf64312f7);
+        
+    
+            poly_line_91a5cb0bb744fd6610c35e46af90b319.bindTooltip(
+                `<div>
+                     Sonabel: Bolgatanga Interconnection -> Bobo-Dioulasso Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_b9268cdc0ef942157ab8279bf64312f7.addTo(map_13df919da2c136d3e90657619398fc05);
+        
+    
+            var feature_group_1f9ba61977febca23be2ab60ae75e1b8 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_8e20c3e07e8772e4bff5ad4710e61170 = L.polyline(
+                [[5.2, -2.85], [6.6856, -1.623]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_1f9ba61977febca23be2ab60ae75e1b8);
+        
+    
+            poly_line_8e20c3e07e8772e4bff5ad4710e61170.bindTooltip(
+                `<div>
+                     Compagnie Ivoirienne d'Electricite: Elubo Border Station -> Kumasi Central Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_66591b4adaffe3105676bac33873a8a4 = L.polyline(
+                [[5.2, -2.85], [5.35, -4.0]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_1f9ba61977febca23be2ab60ae75e1b8);
+        
+    
+            poly_line_66591b4adaffe3105676bac33873a8a4.bindTooltip(
+                `<div>
+                     Compagnie Ivoirienne d'Electricite: Elubo Border Station -> Abidjan Transmission Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_1f9ba61977febca23be2ab60ae75e1b8.addTo(map_13df919da2c136d3e90657619398fc05);
+        
+    
+            var feature_group_af41e91542b4c0490de50a893a9938fb = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_d30f165a367e6a8391b41a0ce18d231b = L.polyline(
+                [[6.12, 1.19], [5.6596, -0.0226]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_af41e91542b4c0490de50a893a9938fb);
+        
+    
+            poly_line_d30f165a367e6a8391b41a0ce18d231b.bindTooltip(
+                `<div>
+                     Communaute Electrique du Benin: Aflao Border Station -> Tema Substation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e627bf8f345725cbeb467fa5918570df = L.polyline(
+                [[6.12, 1.19], [6.13, 1.22]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_af41e91542b4c0490de50a893a9938fb);
+        
+    
+            poly_line_e627bf8f345725cbeb467fa5918570df.bindTooltip(
+                `<div>
+                     Communaute Electrique du Benin: Aflao Border Station -> Lome Transmission Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_46383c5a5ced4d6981247df596313965 = L.polyline(
+                [[6.13, 1.22], [6.37, 2.43]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_af41e91542b4c0490de50a893a9938fb);
+        
+    
+            poly_line_46383c5a5ced4d6981247df596313965.bindTooltip(
+                `<div>
+                     Communaute Electrique du Benin: Lome Transmission Hub -> Cotonou Transmission Hub
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_af41e91542b4c0490de50a893a9938fb.addTo(map_13df919da2c136d3e90657619398fc05);
+        
+    
+            var layer_control_75f66bb861d1bfc89b74d0fabb1e5ef2_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_97e77688f394dd87029cbd822e4e5926,
+                },
+                overlays :  {
+                    "Northern Electricity Distribution Company" : feature_group_d121088af0bfdf251067ded09772241a,
+                    "Ghana Grid Company" : feature_group_6b8d1700b3b0960c3641909eface9395,
+                    "Electricity Company of Ghana" : feature_group_5b70ccc1d8ca81c12b28cfcca33380be,
+                    "Sonabel" : feature_group_b9268cdc0ef942157ab8279bf64312f7,
+                    "Compagnie Ivoirienne d\u0027Electricite" : feature_group_1f9ba61977febca23be2ab60ae75e1b8,
+                    "Communaute Electrique du Benin" : feature_group_af41e91542b4c0490de50a893a9938fb,
+                },
+            };
+            let layer_control_75f66bb861d1bfc89b74d0fabb1e5ef2 = L.control.layers(
+                layer_control_75f66bb861d1bfc89b74d0fabb1e5ef2_layers.base_layers,
+                layer_control_75f66bb861d1bfc89b74d0fabb1e5ef2_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_13df919da2c136d3e90657619398fc05);
+
+        
+</script>
+</html>
