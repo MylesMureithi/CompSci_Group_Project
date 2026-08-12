@@ -24,6 +24,11 @@ sub_latitudes = list(substations['Latitude'])
 locations = list(substations['Name'])
 
 location_coords = {}
+clustered = {}
+gaps = {}
+
+
+mean_distance = stat.mean(lines['Length (km)'])
 
 for loc, lat, long in zip(locations, sub_latitudes, sub_longitudes):
     location_coords[loc] = (lat, long)
@@ -38,7 +43,13 @@ for source, destination in line_locations:
 
     print(f"{source} to {destination} = {distance:.3f}km")
 
-print()
+    if distance <= mean_distance:
+        clustered[source] = f"{distance:.3f}"
+    elif distance > (2*mean_distance):
+        gaps[source] = f"{distance:.3f}"
+
+
+
 
 
 # - Analyse substation density by region
@@ -71,12 +82,13 @@ for reg in substationinregion:
 print()
 
 # - Identify geographic clusters and coverage gaps
-
-
-
-
+print(clustered)
+print()
+print(gaps)
 
 # - Map each utility's line network
+
+
 
 
 
