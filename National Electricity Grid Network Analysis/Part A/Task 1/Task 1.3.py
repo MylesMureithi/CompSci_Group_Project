@@ -11,9 +11,9 @@ import numpy as np
 import statistics as stat
 import matplotlib.pyplot as plt
 
-utilities = pd.read_csv('data_files/utilities.csv') # utilities.csv
-substations = pd.read_csv('data_files/substations.csv') # substations.csv
-lines = pd.read_csv('data_files/lines.csv') # lines.csv
+utilities = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/utilities.csv') # utilities.csv
+substations = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/substations.csv') # substations.csv
+lines = pd.read_csv('National Electricity Grid Network Analysis/Part A/data_files/lines.csv') # lines.csv
 
 """lines_with_source = lines.merge(
     substations[['Substation ID', 'Name', 'Region', 'Country']],
