@@ -1,4 +1,3 @@
-
 import folium
 from geopy.distance import geodesic
 import pandas as pd
@@ -6,7 +5,6 @@ import pandas as pd
 utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
 substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
 lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
-
 
 
 # Matches every Substation ID to its latitude and longitude
@@ -481,9 +479,3 @@ for i, line in lines_with_geographic_data.iterrows():
         regional_connectivity_map.save(
     "regional_cross_border_connectivity.html"
 )
-
-
-  
-
-
-
