@@ -183,7 +183,7 @@ for value in substation_ids:
 print()
 
 # - Measure network efficiency
-print(f"The network efficiency is at {nx.global_efficiency(G)}%, meaning that it operates at approx. {(nx.global_efficiency(G))*100:.1f}% of its possible efficiency.")
+print(f"The network efficiency is at {nx.global_efficiency(G):.3f}%, meaning that it operates at approx. {(nx.global_efficiency(G))*100:.1f}% of its possible efficiency.")
 print()
 
 # Plotting the network
