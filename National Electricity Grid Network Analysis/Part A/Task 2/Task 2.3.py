@@ -169,6 +169,7 @@ for index, substation in substations.iterrows():
         status=substation["Status"]
     )
 
+
 for index, line in lines.iterrows():
 
     source_substation = line["Source Substation ID"]
