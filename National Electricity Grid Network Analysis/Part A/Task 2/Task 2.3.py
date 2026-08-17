@@ -214,30 +214,118 @@ node_betweenness = nx.betweenness_centrality(G)
 
 line_ids = list(lines['Line ID'])
 
-print(sorted([{year for year in comm_years if year > 2000}]))
+
+# ============================================================
+# Reliability Proxy Analysis
+# - Composite proxy per line, combining:
+#     1) Maintenance status  (is the line currently under maintenance?)
+#     2) Line length         (longer lines = more physical fault exposure)
+#     3) Centrality          (avg betweenness of the two substations it connects)
+# ASSUMPTION: line length column is named 'Length (km)' below.
+# If your lines.csv uses a different name, change LENGTH_COL only.
+# ============================================================
+
+LENGTH_COL = 'Length (km)'
+ 
+def minmax_100(values):
+    """Rescale values to 0-100 (min -> 0, max -> 100). Falls back to zeros if no variance."""
+    min_v = min(values)
+    max_v = max(values)
+ 
+    if max_v == min_v:
+        return [0.0 for _ in values]
+ 
+    return [100 * (v - min_v) / (max_v - min_v) for v in values]
 
 
+reliability_rows = []
 
+for _, line in lines.iterrows():
 
+    line_id = line['Line ID']
+    source = line['Source Substation ID']
+    destination = line['Destination Substation ID']
+    status = line['Status']
 
+    # Skip lines whose endpoints aren't in the graph (mirrors the "Orphaned line" check above)
+    if source not in G.nodes or destination not in G.nodes:
+        continue
 
+    # 1) Maintenance factor: 1 if under maintenance, else 0
+    maintenance_factor = 1 if status == "Under Maintenance" else 0
 
+    # 2) Raw line length (NaN-safe)
+    length_km = line[LENGTH_COL] if LENGTH_COL in lines.columns else None
 
+    # 3) Centrality factor: average betweenness of the two endpoint substations
+    centrality_factor = (
+        node_betweenness.get(source, 0.0) + node_betweenness.get(destination, 0.0)
+    ) / 2
 
+    reliability_rows.append({
+        'Line ID': line_id,
+        'Source': source,
+        'Destination': destination,
+        'Status': status,
+        'Maintenance Factor': maintenance_factor,
+        'Length (km)': length_km,
+        'Centrality Factor': centrality_factor,
+    })
 
+reliability_df = pd.DataFrame(reliability_rows)
 
+# Normalize length and centrality so they're comparable on the same scale,
+# then combine into one composite score. Maintenance factor is already 0/1
+# so it's left as-is (acts as a binary risk flag/weight).
+if LENGTH_COL in reliability_df.columns and reliability_df[LENGTH_COL].notna().any():
+    reliability_df['Length Z'] = minmax_100(reliability_df[LENGTH_COL].fillna(reliability_df[LENGTH_COL].mean()).tolist())
+else:
+    reliability_df['Length Z'] = 0.0
 
+reliability_df['Centrality Z'] = minmax_100(reliability_df['Centrality Factor'].tolist())
 
+# Weights are adjustable — maintenance weighted heaviest since it's a direct,
+# current-state risk signal rather than a structural proxy.
+W_MAINTENANCE = 0.5
+W_LENGTH = 0.25
+W_CENTRALITY = 0.25
 
+reliability_df['Reliability Risk Score'] = (
+    W_MAINTENANCE * reliability_df['Maintenance Factor']
+    + W_LENGTH * reliability_df['Length Z']
+    + W_CENTRALITY * reliability_df['Centrality Z']
+)
 
+reliability_df = reliability_df.sort_values('Reliability Risk Score', ascending=False)
 
+print("Reliability Proxy Analysis (top 10 highest-risk lines):")
+print("-" * 100)
+print(reliability_df.head(10).to_string(index=False))
 
-# - Substation age distribution (older assets, higher fault-risk proxy)
+print()
 
+# Optional: roll up to substation level — average risk score of all lines touching each substation
+substation_risk = {}
+for _, row in reliability_df.iterrows():
+    for node in (row['Source'], row['Destination']):
+        substation_risk.setdefault(node, []).append(row['Reliability Risk Score'])
 
+substation_risk_avg = {
+    node: round(sum(scores) / len(scores), 4)
+    for node, scores in substation_risk.items()
+}
 
-# - Concentration of capacity in a small number of substations (risk indicator)
+substation_risk_ranked = dict(
+    sorted(substation_risk_avg.items(), key=lambda item: item[1], reverse=True)
+)
 
+print("Substation-level average reliability risk (highest first):")
+print("-" * 100)
+for node, score in list(substation_risk_ranked.items())[:10]:
+    name = G.nodes[node].get('name', node)
+    print(f"{name}: {score}")
+
+print()
 
 
 
