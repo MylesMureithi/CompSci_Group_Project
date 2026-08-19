@@ -57,6 +57,14 @@ def init_db(db_path='gridcare.db'):
         '''
     )
 
+#--- Adding a Test user seed to see if system woorks
+    cur.execute(
+        '''
+        INSERT OR IGNORE INTO users (username, password_hash, role)
+        VALUES (?, ?, ?)            
+        ''',
+        ('admin','password123','admin')
+    )
     conn.commit()
     return conn
 
@@ -67,8 +75,9 @@ def init_db(db_path='gridcare.db'):
 
 
 class LoginWindow(tk.Frame):
-    def __init__(self, master, on_success):
+    def __init__(self, master, conn, on_success):
         super().__init__(master)
+        self.conn = conn
         self.on_success = on_success
         self.master = master
         master.title('GridCare-Lite — Login')
@@ -85,13 +94,21 @@ class LoginWindow(tk.Frame):
         self.pack(padx=20, pady=20)
 
     def attempt_login(self):
-        username = self.username_entry.get()
+        username = self.username_entry.get()   
         password = self.password_entry.get()
         if not username or not password:
             messagebox.showerror('Login Failed', 'Please enter both a username and password.')
-        return
+            return
+        
+        # Real database check against the users table
+        cur = self.conn.cursor()
+        cur.execute('SELECT password_hash FROM users WHERE username = ?', (username,))
+        row = cur.fetchone()
 
-        # TODO: replace with a real password check against the users table
+        if row and row[0] == password:
+            self.on_success(username)
+        else:
+            messagebox.showerror('Login Failed', 'Invalid username or password.')
         self.on_success(username)
 
 
@@ -131,7 +148,7 @@ def main():
             widget.destroy()
         OutageDashboard(root, conn, username)
 
-    LoginWindow(root, on_success=show_dashboard)
+    LoginWindow(root, conn, on_success=show_dashboard)
     root.mainloop()
 
 
