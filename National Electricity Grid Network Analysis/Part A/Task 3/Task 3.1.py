@@ -6,6 +6,7 @@ import networkx as nx
 import plotly.graph_objects as go
 import streamlit_folium as sf
 import folium
+
 utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
 substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
 lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
