@@ -220,3 +220,6 @@ __marimo__/
 # Misc
 .DS_Store
 National Electricity Grid Network Analysis/.DS_Store
+
+# Database
+*.db
