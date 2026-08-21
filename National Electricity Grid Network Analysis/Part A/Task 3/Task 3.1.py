@@ -543,16 +543,40 @@ with tab4:
 
         st.write("The capacity concentration measures the percentage of total substation capacity provided by the largest 10% of substations. A high value indicates that a small number of substations are responsible for majority of the grid's capacity.")
 
-    """
-    Reliability tab:
-    - "business capacity and capacity/reliability analysis"
-    - "Business intelligence / reliability charts"
-
-    """
+   
 
 with tab5:
     st.title("Search Tab")
     st.write("Search for specific substations and lines!")
+    st.write("Search & Compare")
+    st.subheader("Substation Search")
+    search_substation=st.text_input("Enter substation name or ID")
+    if search_substation:
+        substation_results=substations[substations["Name"].astype(str).str.contains(search_substation,case=False,na=False)|substations["Substation ID"].astype(str).str.contains(search_substation,case=False,na=False)]
+        st.write("Substations found:",len(substation_results))
+        st.dataframe(substation_results,use_container_width=True,hide_index=True)
+    st.divider()
+    st.subheader("Transmission Line Search")
+    search_line=st.text_input("Enter line ID or substation name")
+    if search_line:
+        line_results=lines[lines["Line ID"].astype(str).str.contains(search_line,case=False,na=False)|lines["Source Substation"].astype(str).str.contains(search_line,case=False,na=False)|lines["Destination Substation"].astype(str).str.contains(search_line,case=False,na=False)]
+        st.write("Transmission lines found:",len(line_results))
+        st.dataframe(line_results,use_container_width=True,hide_index=True)
+    st.divider()
+    st.subheader("Utility Comparison")
+    utility_names=utilities["Name"].dropna().unique().tolist()
+    selected_utilities=st.multiselect("Select utilities to compare",utility_names)
+    if selected_utilities:
+        selected_utilities_data=utilities[utilities["Name"].isin(selected_utilities)]
+        utility_ids=selected_utilities_data["Utility ID"].tolist()
+        utility_lines=lines[lines["Utility ID"].isin(utility_ids)]
+        utility_comparison=utility_lines.groupby("Utility ID").agg(Transmission_Lines=("Line ID","count"),Total_Capacity=("Capacity (MVA)","sum"),Total_Length=("Length (km)","sum")).reset_index()
+        utility_comparison=utility_comparison.merge(utilities[["Utility ID","Name"]],on="Utility ID",how="left")
+        utility_comparison=utility_comparison[["Name","Transmission_Lines","Total_Capacity","Total_Length"]]
+        utility_comparison.columns=["Utility","Transmission Lines","Total Capacity (MVA)","Total Length (km)"]
+        st.dataframe(utility_comparison,use_container_width=True,hide_index=True)
+        utility_chart=px.bar(utility_comparison,x="Utility",y="Total Capacity (MVA)",title="Utility Capacity Comparison")
+        st.plotly_chart(utility_chart,use_container_width=True)
 
     """
     Search tab:
