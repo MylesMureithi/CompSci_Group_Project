@@ -578,12 +578,7 @@ with tab5:
         utility_chart=px.bar(utility_comparison,x="Utility",y="Total Capacity (MVA)",title="Utility Capacity Comparison")
         st.plotly_chart(utility_chart,use_container_width=True)
 
-    """
-    Search tab:
-    - "substation finder and utility comparison tools
-    - "Search functionality for specific substations/lines"
-    - "Comparison tools for different utilities"
-    """
+  
 
 
 
