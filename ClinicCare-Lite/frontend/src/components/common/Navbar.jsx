@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 
+import ThemeToggle from "./ThemeToggle";
+
 function Navbar() {
   return (
     <nav className="navbar">
@@ -8,6 +10,7 @@ function Navbar() {
       </div>
 
       <div className="navbar-links">
+        <ThemeToggle />
         <NavLink to="/">Home</NavLink>
         <NavLink to="/patient">Patient</NavLink>
         <NavLink to="/clinician">Clinician</NavLink>
