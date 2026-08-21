@@ -371,3 +371,443 @@ main {
     flex-direction: column;
   }
 }
+
+/* ===== Form List ===== */
+
+.form-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-list .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.form-content {
+  flex: 1;
+}
+
+.form-content h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.form-content p {
+  margin-bottom: 0.5rem;
+}
+
+.form-meta {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+@media (max-width: 600px) {
+  .form-list .card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ===== Outcomes ===== */
+
+.outcome-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.outcome-list .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.outcome-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.outcome-header h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.outcome-date {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.outcome-summary {
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+.outcome-summary h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.outcome-summary p {
+  font-size: 0.9rem;
+}
+
+.status-reviewed {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+@media (max-width: 600px) {
+  .outcome-header {
+    flex-direction: column;
+  }
+}
+
+/* ===== Messages ===== */
+
+.message-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+  min-height: 550px;
+}
+
+.conversation-list {
+  padding: 0;
+  overflow: hidden;
+}
+
+.message-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.message-section-header h2 {
+  font-size: 1.1rem;
+}
+
+.message-section-header .button {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.conversation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+
+  cursor: pointer;
+}
+
+.conversation:hover,
+.conversation.active {
+  background-color: #f8fafc;
+}
+
+.conversation h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.conversation p {
+  font-size: 0.8rem;
+}
+
+.message-time {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.message-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.message-panel-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.message-panel-header h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.message-panel-header span {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+.message p {
+  font-size: 0.9rem;
+}
+
+.message span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.message.received {
+  align-self: flex-start;
+  background-color: #f1f5f9;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background-color: #eff6ff;
+}
+
+.message-input {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.message-input input {
+  flex: 1;
+  min-width: 0;
+
+  padding: 0.65rem 0.85rem;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.message-input input:focus {
+  border-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .message-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .conversation-list {
+    min-height: auto;
+  }
+
+  .message {
+    max-width: 85%;
+  }
+}
+
+/* ===== Submission Table ===== */
+
+.submission-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.submission-table th,
+.submission-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.submission-table th {
+  background-color: #f8fafc;
+  color: #475569;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.submission-table td {
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.submission-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.submission-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.submission-table .button {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+/* ===== Review Page ===== */
+
+.review-page-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== Review Panel ===== */
+
+.review-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.review-section {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.review-section:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.review-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Patient Information ===== */
+
+.patient-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.patient-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.patient-info span {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.patient-info strong {
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+/* ===== Responses ===== */
+
+.response {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+.response:last-child {
+  margin-bottom: 0;
+}
+
+.response h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.response p {
+  font-size: 0.9rem;
+}
+
+/* ===== Feedback ===== */
+
+.feedback-input {
+  width: 100%;
+  resize: vertical;
+
+  padding: 0.75rem;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.feedback-input:focus {
+  border-color: #2563eb;
+}
+
+/* ===== Review Actions ===== */
+
+.review-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* ===== Responsive Review ===== */
+
+@media (max-width: 768px) {
+  .patient-info {
+    grid-template-columns: 1fr;
+  }
+
+  .review-actions {
+    flex-direction: column;
+  }
+
+  .review-actions .button {
+    width: 100%;
+  }
+}

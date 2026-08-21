@@ -35,7 +35,9 @@ function Dashboard() {
 
           <p>You have 2 forms available for submission.</p>
 
-          <Button>View Forms</Button>
+          <Link to="/patient/forms">
+            <Button>View Forms</Button>
+          </Link>
         </Card>
 
         <Card>
@@ -46,7 +48,9 @@ function Dashboard() {
 
           <p>View your latest health assessment outcomes.</p>
 
-          <Button>View Outcomes</Button>
+          <Link to="/patient/outcomes">
+            <Button>View Outcomes</Button>
+          </Link>
         </Card>
 
         <Card>
@@ -57,7 +61,9 @@ function Dashboard() {
 
           <p>You have 2 unread messages from your clinician.</p>
 
-          <Button>Open Messages</Button>
+          <Link to="/patient/messages">
+            <Button>Open Messages</Button>
+          </Link>
         </Card>
       </section>
     </div>
