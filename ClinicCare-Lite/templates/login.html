@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>ClinicCare-Lite — Login</title>
-        </head>
+<html>
+    <head>
+        <title>ClinicCare-Lite — Login</title>
+    </head>
+    
+    <body>
+        <h1>ClinicCare-Lite Login</h1>
         
-        <body>
-            <h1>ClinicCare-Lite Login</h1>
-        </body>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" action="/login">
+            <div>
+                <label>User ID:</label>
+                <input type="text" name="user_id" required>
+            </div>
+            <br>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password" required>
+            </div>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </body>
 </html>
