@@ -8,7 +8,7 @@ function Dashboard() {
     <div className="dashboard">
       <section className="dashboard-header">
         <div>
-          <h1>Welcome back</h1>
+          <h1>Welcome back!</h1>
           <p>Here's an overview of your health activities.</p>
         </div>
       </section>
@@ -17,7 +17,6 @@ function Dashboard() {
         <Card>
           <div className="card-header">
             <h2>Health Tasks</h2>
-            <span className="card-count">3</span>
           </div>
 
           <p>You have 3 health tasks waiting for you.</p>
@@ -30,34 +29,37 @@ function Dashboard() {
         <Card>
           <div className="card-header">
             <h2>Forms</h2>
-            <span className="card-count">2</span>
           </div>
 
           <p>You have 2 forms available for submission.</p>
 
-          <Button>View Forms</Button>
+          <Link to="/patient/forms">
+            <Button>View Forms</Button>
+          </Link>
         </Card>
 
         <Card>
           <div className="card-header">
             <h2>Outcomes</h2>
-            <span className="card-count">1</span>
           </div>
 
           <p>View your latest health assessment outcomes.</p>
 
-          <Button>View Outcomes</Button>
+          <Link to="/patient/outcomes">
+            <Button>View Outcomes</Button>
+          </Link>
         </Card>
 
         <Card>
           <div className="card-header">
             <h2>Messages</h2>
-            <span className="card-count">2</span>
           </div>
 
           <p>You have 2 unread messages from your clinician.</p>
 
-          <Button>Open Messages</Button>
+          <Link to="/patient/messages">
+            <Button>Open Messages</Button>
+          </Link>
         </Card>
       </section>
     </div>
