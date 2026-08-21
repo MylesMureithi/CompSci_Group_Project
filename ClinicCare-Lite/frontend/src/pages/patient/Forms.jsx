@@ -21,8 +21,6 @@ function Forms() {
               </p>
               <span className="form-meta">Estimated time: 5 minutes</span>
             </div>
-
-            <span className="status status-pending">Not Started</span>
           </div>
 
           <Button>Open Form</Button>
@@ -37,8 +35,6 @@ function Forms() {
               </p>
               <span className="form-meta">Estimated time: 3 minutes</span>
             </div>
-
-            <span className="status status-pending">Not Started</span>
           </div>
 
           <Button>Open Form</Button>
@@ -53,8 +49,6 @@ function Forms() {
               </p>
               <span className="form-meta">Submitted: August 18, 2026</span>
             </div>
-
-            <span className="status status-completed">Submitted</span>
           </div>
 
           <Button variant="secondary">View Submission</Button>

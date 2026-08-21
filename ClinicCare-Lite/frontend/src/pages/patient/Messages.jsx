@@ -20,7 +20,7 @@ function Messages() {
 
           <div className="conversation active">
             <div>
-              <h3>Dr. Sarah Kim</h3>
+              <h3>Dr. Akoto</h3>
               <p>Your assessment has been reviewed.</p>
             </div>
             <span className="message-time">10:24 AM</span>
@@ -38,7 +38,7 @@ function Messages() {
         <Card className="message-panel">
           <div className="message-panel-header">
             <div>
-              <h2>Dr. Sarah Kim</h2>
+              <h2>Dr. Akoto</h2>
               <span>Clinician</span>
             </div>
           </div>

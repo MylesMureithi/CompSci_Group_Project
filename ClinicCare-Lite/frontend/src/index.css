@@ -1,5 +1,3 @@
-/* ===== Global Reset ===== */
-
 * {
   margin: 0;
   padding: 0;
@@ -11,27 +9,13 @@ html {
 }
 
 body {
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: #f8fafc;
   color: #1e293b;
-
   line-height: 1.5;
 }
 
-/* ===== Typography ===== */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: #0f172a;
   line-height: 1.2;
 }
@@ -52,19 +36,12 @@ p {
   color: #475569;
 }
 
-/* ===== Links ===== */
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ===== Buttons ===== */
-
-button,
-input,
-textarea,
-select {
+button, input, textarea, select {
   font: inherit;
 }
 
@@ -72,38 +49,19 @@ button {
   cursor: pointer;
 }
 
-/* ===== Layout ===== */
-
 main {
   width: 100%;
   min-height: calc(100vh - 64px);
   padding: 2rem;
 }
 
-/* ===== Responsive ===== */
-
-@media (max-width: 768px) {
-  main {
-    padding: 1.25rem;
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-}
-
-/* ===== Navbar ===== */
-
 .navbar {
   height: 64px;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 2rem;
-
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
 }
@@ -124,7 +82,6 @@ main {
   color: #64748b;
   font-size: 0.95rem;
   font-weight: 500;
-
   transition: color 0.2s ease;
 }
 
@@ -136,35 +93,13 @@ main {
   color: #2563eb;
 }
 
-/* ===== Responsive Navbar ===== */
-
-@media (max-width: 600px) {
-  .navbar {
-    padding: 0 1rem;
-  }
-
-  .navbar-links {
-    gap: 0.75rem;
-  }
-
-  .navbar-links a {
-    font-size: 0.85rem;
-  }
-}
-
-/* ===== Buttons ===== */
-
 .button {
   border: none;
   border-radius: 8px;
   padding: 0.65rem 1rem;
-
   font-size: 0.9rem;
   font-weight: 600;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .button:active {
@@ -207,18 +142,13 @@ main {
   background-color: #15803d;
 }
 
-/* ===== Cards ===== */
-
 .card {
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 1.5rem;
-
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
-
-/* ===== Dashboard ===== */
 
 .dashboard {
   max-width: 1200px;
@@ -237,8 +167,6 @@ main {
   font-size: 1rem;
 }
 
-/* ===== Dashboard Grid ===== */
-
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -255,8 +183,6 @@ main {
   align-self: flex-start;
 }
 
-/* ===== Card Header ===== */
-
 .card-header {
   display: flex;
   align-items: center;
@@ -271,28 +197,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 32px;
   height: 32px;
-
   border-radius: 50%;
-
   background-color: #eff6ff;
   color: #2563eb;
-
   font-size: 0.9rem;
   font-weight: 700;
 }
-
-/* ===== Responsive Dashboard ===== */
-
-@media (max-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===== General Pages ===== */
 
 .page {
   max-width: 1200px;
@@ -306,8 +218,6 @@ main {
 .page-header h1 {
   margin-bottom: 0.5rem;
 }
-
-/* ===== Task List ===== */
 
 .task-list {
   display: flex;
@@ -340,15 +250,11 @@ main {
   color: #64748b;
 }
 
-/* ===== Status ===== */
-
 .status {
   display: inline-flex;
   align-items: center;
-
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -362,17 +268,6 @@ main {
   background-color: #dcfce7;
   color: #166534;
 }
-
-/* ===== Responsive Tasks ===== */
-
-@media (max-width: 600px) {
-  .task-list .card {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-/* ===== Form List ===== */
 
 .form-list {
   display: flex;
@@ -404,15 +299,6 @@ main {
   font-size: 0.85rem;
   color: #64748b;
 }
-
-@media (max-width: 600px) {
-  .form-list .card {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-/* ===== Outcomes ===== */
 
 .outcome-list {
   display: flex;
@@ -463,14 +349,6 @@ main {
   color: #1e40af;
 }
 
-@media (max-width: 600px) {
-  .outcome-header {
-    flex-direction: column;
-  }
-}
-
-/* ===== Messages ===== */
-
 .message-layout {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -505,15 +383,12 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-
   padding: 1rem 1.25rem;
   border-bottom: 1px solid #e2e8f0;
-
   cursor: pointer;
 }
 
-.conversation:hover,
-.conversation.active {
+.conversation:hover, .conversation.active {
   background-color: #f8fafc;
 }
 
@@ -600,34 +475,15 @@ main {
 .message-input input {
   flex: 1;
   min-width: 0;
-
   padding: 0.65rem 0.85rem;
-
   border: 1px solid #cbd5e1;
   border-radius: 8px;
-
   outline: none;
 }
 
 .message-input input:focus {
   border-color: #2563eb;
 }
-
-@media (max-width: 768px) {
-  .message-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .conversation-list {
-    min-height: auto;
-  }
-
-  .message {
-    max-width: 85%;
-  }
-}
-
-/* ===== Submission Table ===== */
 
 .submission-card {
   padding: 0;
@@ -645,8 +501,7 @@ main {
   min-width: 700px;
 }
 
-.submission-table th,
-.submission-table td {
+.submission-table th, .submission-table td {
   padding: 1rem 1.25rem;
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
@@ -655,7 +510,6 @@ main {
 .submission-table th {
   background-color: #f8fafc;
   color: #475569;
-
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -680,8 +534,6 @@ main {
   font-size: 0.8rem;
 }
 
-/* ===== Review Page ===== */
-
 .review-page-header {
   display: flex;
   align-items: flex-start;
@@ -690,7 +542,6 @@ main {
 .back-link {
   display: inline-block;
   margin-bottom: 1rem;
-
   color: #2563eb;
   font-size: 0.9rem;
   font-weight: 500;
@@ -699,8 +550,6 @@ main {
 .back-link:hover {
   text-decoration: underline;
 }
-
-/* ===== Review Panel ===== */
 
 .review-panel {
   display: flex;
@@ -722,8 +571,6 @@ main {
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
-
-/* ===== Patient Information ===== */
 
 .patient-info {
   display: grid;
@@ -747,12 +594,9 @@ main {
   color: #0f172a;
 }
 
-/* ===== Responses ===== */
-
 .response {
   padding: 1rem;
   margin-bottom: 0.75rem;
-
   background-color: #f8fafc;
   border-radius: 8px;
 }
@@ -770,17 +614,12 @@ main {
   font-size: 0.9rem;
 }
 
-/* ===== Feedback ===== */
-
 .feedback-input {
   width: 100%;
   resize: vertical;
-
   padding: 0.75rem;
-
   border: 1px solid #cbd5e1;
   border-radius: 8px;
-
   outline: none;
 }
 
@@ -788,31 +627,11 @@ main {
   border-color: #2563eb;
 }
 
-/* ===== Review Actions ===== */
-
 .review-actions {
   display: flex;
   justify-content: flex-end;
   gap: 0.75rem;
 }
-
-/* ===== Responsive Review ===== */
-
-@media (max-width: 768px) {
-  .patient-info {
-    grid-template-columns: 1fr;
-  }
-
-  .review-actions {
-    flex-direction: column;
-  }
-
-  .review-actions .button {
-    width: 100%;
-  }
-}
-
-/* ===== Clinician Forms ===== */
 
 .forms-page-header {
   display: flex;
@@ -857,9 +676,7 @@ main {
 .form-stat {
   display: flex;
   justify-content: space-between;
-
   padding: 0.75rem 0;
-
   border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
 }
@@ -889,18 +706,13 @@ main {
   }
 }
 
-/* ===== Home ===== */
-
 .home {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ===== Hero ===== */
-
 .hero {
   min-height: calc(100vh - 64px);
-
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
@@ -913,11 +725,8 @@ main {
 
 .hero-label {
   display: inline-block;
-
   margin-bottom: 1rem;
-
   color: #2563eb;
-
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -926,7 +735,6 @@ main {
 
 .hero h1 {
   margin-bottom: 1.25rem;
-
   font-size: 3.25rem;
   line-height: 1.1;
 }
@@ -934,7 +742,6 @@ main {
 .hero-content > p {
   max-width: 580px;
   margin-bottom: 2rem;
-
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -944,8 +751,6 @@ main {
   gap: 0.75rem;
 }
 
-/* ===== Hero Visual ===== */
-
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -954,13 +759,10 @@ main {
 .hero-card {
   width: 100%;
   max-width: 400px;
-
   padding: 1.5rem;
-
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
 
@@ -968,16 +770,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding-bottom: 1rem;
   border-bottom: 1px solid #e2e8f0;
-
   font-weight: 700;
 }
 
 .hero-status {
   color: #16a34a;
-
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -986,17 +785,14 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
   padding-top: 1rem;
 }
 
 .hero-stat {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-
   padding: 1rem;
-
   background-color: #f8fafc;
   border-radius: 8px;
 }
@@ -1010,19 +806,15 @@ main {
   font-size: 0.8rem;
 }
 
-/* ===== Home Features ===== */
-
 .home-features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-
   padding-bottom: 4rem;
 }
 
 .home-features > div {
   padding: 1.5rem;
-
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
@@ -1030,7 +822,6 @@ main {
 
 .home-features h2 {
   margin-bottom: 0.5rem;
-
   font-size: 1.1rem;
 }
 
@@ -1038,8 +829,212 @@ main {
   font-size: 0.9rem;
 }
 
-/* ===== Responsive Home ===== */
+.auth-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.register-card {
+  max-width: 520px;
+}
+
+.auth-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  font-size: 0.9rem;
+}
+
+.auth-error {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #1e293b;
+  outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: #2563eb;
+}
+
+.form-help {
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 4rem;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #2563eb;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.auth-footer a {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Global Responsiveness */
+@media (max-width: 768px) {
+  main {
+    padding: 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Responsive Navbar */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar-links {
+    gap: 0.75rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive Dashboard */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Tasks */
+@media (max-width: 600px) {
+  .task-list .card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Form Responsiveness */
+@media (max-width: 600px) {
+  .form-list .card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Outcome page responsiveness */
+@media (max-width: 600px) {
+  .outcome-header {
+    flex-direction: column;
+  }
+}
+
+/* Message page responsiveness */
+@media (max-width: 768px) {
+  .message-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .conversation-list {
+    min-height: auto;
+  }
+
+  .message {
+    max-width: 85%;
+  }
+}
+
+/* Feedback/Review Page Responsiveness */
+@media (max-width: 768px) {
+  .patient-info {
+    grid-template-columns: 1fr;
+  }
+
+  .review-actions {
+    flex-direction: column;
+  }
+
+  .review-actions .button {
+    width: 100%;
+  }
+}
+
+/* Responsive Home Page */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
@@ -1069,141 +1064,4 @@ main {
   .hero-actions .button {
     width: 100%;
   }
-}
-
-/* ===== Authentication ===== */
-
-.auth-page {
-  min-height: calc(100vh - 64px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 2rem 1rem;
-}
-
-.auth-card {
-  width: 100%;
-  max-width: 440px;
-
-  padding: 2rem;
-
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-}
-
-.register-card {
-  max-width: 520px;
-}
-
-.auth-header {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.auth-header h1 {
-  margin-bottom: 0.5rem;
-}
-
-.auth-header p {
-  font-size: 0.9rem;
-}
-
-.auth-error {
-  margin-bottom: 1rem;
-  padding: 0.75rem 1rem;
-
-  background-color: #fef2f2;
-  border: 1px solid #fecaca;
-  border-radius: 8px;
-
-  color: #b91c1c;
-  font-size: 0.85rem;
-}
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.form-group label {
-  color: #334155;
-
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.form-group input,
-.form-group select {
-  width: 100%;
-
-  padding: 0.7rem 0.8rem;
-
-  background-color: #ffffff;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-
-  color: #1e293b;
-  outline: none;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  border-color: #2563eb;
-}
-
-.form-help {
-  color: #64748b;
-  font-size: 0.75rem;
-  line-height: 1.4;
-}
-
-.password-field {
-  position: relative;
-}
-
-.password-field input {
-  padding-right: 4rem;
-}
-
-.password-toggle {
-  position: absolute;
-  top: 50%;
-  right: 0.75rem;
-
-  transform: translateY(-50%);
-
-  border: none;
-  background: none;
-
-  color: #2563eb;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.auth-footer {
-  margin-top: 1.5rem;
-
-  text-align: center;
-  font-size: 0.85rem;
-}
-
-.auth-footer a {
-  color: #2563eb;
-  font-weight: 600;
-}
-
-.auth-footer a:hover {
-  text-decoration: underline;
 }

@@ -20,7 +20,7 @@ function Messages() {
 
           <div className="conversation active">
             <div>
-              <h3>Michael Johnson</h3>
+              <h3>Nigel Asante</h3>
               <p>I have a question about my assessment.</p>
             </div>
 
@@ -29,7 +29,7 @@ function Messages() {
 
           <div className="conversation">
             <div>
-              <h3>Emma Williams</h3>
+              <h3>Miles Morales 🕷️</h3>
               <p>Thank you for your feedback.</p>
             </div>
 
@@ -38,7 +38,7 @@ function Messages() {
 
           <div className="conversation">
             <div>
-              <h3>Sarah Brown</h3>
+              <h3>Papa Kojo</h3>
               <p>When should I complete my next assessment?</p>
             </div>
 
@@ -49,7 +49,7 @@ function Messages() {
         <Card className="message-panel">
           <div className="message-panel-header">
             <div>
-              <h2>Michael Johnson</h2>
+              <h2>Nigel Asante</h2>
               <span>Patient</span>
             </div>
           </div>
@@ -57,8 +57,7 @@ function Messages() {
           <div className="messages">
             <div className="message received">
               <p>
-                I have a question about the recommendations from my health
-                assessment.
+                Good morning. I have some questions about recommendations for my check-up.
               </p>
 
               <span>10:20 AM</span>

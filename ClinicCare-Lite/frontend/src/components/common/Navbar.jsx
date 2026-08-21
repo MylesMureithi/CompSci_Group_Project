@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <NavLink to="/">ClinicCare</NavLink>
+        <NavLink to="/">ClinicCare 🏥</NavLink>
       </div>
 
       <div className="navbar-links">

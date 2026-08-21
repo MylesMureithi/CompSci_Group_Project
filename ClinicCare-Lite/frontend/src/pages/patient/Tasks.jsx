@@ -19,8 +19,6 @@ function Tasks() {
               <p>Complete your general health assessment.</p>
               <span className="task-due">Due: August 25, 2026</span>
             </div>
-
-            <span className="status status-pending">Pending</span>
           </div>
 
           <Button>Start Task</Button>
@@ -33,8 +31,6 @@ function Tasks() {
               <p>Review and confirm your current medications.</p>
               <span className="task-due">Due: August 28, 2026</span>
             </div>
-
-            <span className="status status-pending">Pending</span>
           </div>
 
           <Button>Start Task</Button>
@@ -47,8 +43,6 @@ function Tasks() {
               <p>Complete your monthly wellness questionnaire.</p>
               <span className="task-due">Completed: August 18, 2026</span>
             </div>
-
-            <span className="status status-completed">Completed</span>
           </div>
 
           <Button variant="secondary">View Submission</Button>

@@ -7,23 +7,23 @@ function Reviews() {
 
   const submissions = {
     1: {
-      patient: "Michael Johnson",
+      patient: "Nigel Asante",
       form: "General Health Assessment",
       submitted: "August 20, 2026",
     },
     2: {
-      patient: "Emma Williams",
+      patient: "Miles Morales",
       form: "Medication Information",
       submitted: "August 19, 2026",
     },
     3: {
-      patient: "Daniel Smith",
+      patient: "Papa Kojo",
       form: "Wellness Questionnaire",
       submitted: "August 18, 2026",
     },
     4: {
-      patient: "Sarah Brown",
-      form: "General Health Assessment",
+      patient: "Stephanie Abakah",
+      form: "Medication Review",
       submitted: "August 17, 2026",
     },
   };

@@ -16,7 +16,6 @@ function Dashboard() {
         <Card>
           <div className="card-header">
             <h2>Submissions</h2>
-            <span className="card-count">8</span>
           </div>
 
           <p>8 patient submissions are awaiting your review.</p>
@@ -29,7 +28,6 @@ function Dashboard() {
         <Card>
           <div className="card-header">
             <h2>Health Forms</h2>
-            <span className="card-count">4</span>
           </div>
 
           <p>Manage the health forms available to your patients.</p>
@@ -42,7 +40,6 @@ function Dashboard() {
         <Card>
           <div className="card-header">
             <h2>Reviews</h2>
-            <span className="card-count">3</span>
           </div>
 
           <p>You have 3 reviews that require your attention.</p>
@@ -55,7 +52,6 @@ function Dashboard() {
         <Card>
           <div className="card-header">
             <h2>Messages</h2>
-            <span className="card-count">5</span>
           </div>
 
           <p>You have 5 unread messages from patients.</p>

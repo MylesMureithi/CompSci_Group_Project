@@ -16,9 +16,6 @@ function Outcomes() {
           <div className="outcome-header">
             <div>
               <h2>General Health Assessment</h2>
-              <span className="outcome-date">
-                Reviewed: August 20, 2026
-              </span>
             </div>
 
             <span className="status status-reviewed">Reviewed</span>
@@ -39,9 +36,6 @@ function Outcomes() {
           <div className="outcome-header">
             <div>
               <h2>Wellness Questionnaire</h2>
-              <span className="outcome-date">
-                Submitted: August 18, 2026
-              </span>
             </div>
 
             <span className="status status-pending">Awaiting Review</span>

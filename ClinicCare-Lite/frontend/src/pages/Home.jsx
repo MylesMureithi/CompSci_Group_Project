@@ -40,18 +40,17 @@ function Home() {
 
             <div className="hero-card-content">
               <div className="hero-stat">
-                <strong>Health Tasks</strong>
-                <span>3 pending</span>
+                <strong>📊 Health Tasks</strong>
               </div>
 
               <div className="hero-stat">
-                <strong>Forms</strong>
-                <span>2 available</span>
+                <strong>📝 Forms</strong>
+
               </div>
 
               <div className="hero-stat">
-                <strong>Messages</strong>
-                <span>2 unread</span>
+                <strong>💬 Messages</strong>
+
               </div>
             </div>
           </div>
