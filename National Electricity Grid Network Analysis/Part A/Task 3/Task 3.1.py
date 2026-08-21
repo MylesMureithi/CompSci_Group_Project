@@ -6,6 +6,7 @@ import networkx as nx
 import plotly.graph_objects as go
 import streamlit_folium as sf
 import folium
+import plotly.express as px
 
 utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
 substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
@@ -447,6 +448,100 @@ with tab3:
 with tab4:
     st.title("Reliability Overview")
     st.write("Welcome to the Reliability Overview.")
+    with tab4:
+        st.title("Reliability & Capacity Analysis")
+        st.write("Business intelligence analysis of grid capacity, infrastructure status, maintenance, and reliability indicators.")
+        reliability_substations=substations.copy()
+        reliability_lines=lines.copy()
+        reliability_utilities=utilities.copy()
+        reliability_substations["Capacity (MVA)"]=pd.to_numeric(reliability_substations["Capacity (MVA)"],errors="coerce")
+        reliability_substations["Voltage (kV)"]=pd.to_numeric(reliability_substations["Voltage (kV)"],errors="coerce")
+        reliability_lines["Capacity (MVA)"]=pd.to_numeric(reliability_lines["Capacity (MVA)"],errors="coerce")
+        reliability_lines["Length (km)"]=pd.to_numeric(reliability_lines["Length (km)"],errors="coerce")
+        reliability_substations["Capacity (MVA)"]=reliability_substations["Capacity (MVA)"].fillna(0)
+        reliability_lines["Capacity (MVA)"]=reliability_lines["Capacity (MVA)"].fillna(0)
+        reliability_lines["Length (km)"]=reliability_lines["Length (km)"].fillna(0)
+
+        st.subheader("Key Reliability Indicators")
+        total_capacity=reliability_substations["Capacity (MVA)"].sum()
+        total_substations=len(reliability_substations)
+        total_lines=len(reliability_lines)
+        maintenance_lines=reliability_lines[reliability_lines["Status"].astype(str).str.lower().str.contains("maintenance")]
+        maintenance_percentage=len(maintenance_lines)/total_lines*100 if total_lines>0 else 0
+        operational_lines=reliability_lines[reliability_lines["Status"].astype(str).str.lower().str.contains("operat")]
+        operational_percentage=len(operational_lines)/total_lines*100 if total_lines>0 else 0
+
+        metric1,metric2,metric3,metric4=st.columns(4)
+        with metric1:
+            st.metric("Total Grid Capacity",f"{total_capacity:,.0f} MVA")
+        with metric2:
+            st.metric("Total Substations",f"{total_substations:,}")
+        with metric3:
+            st.metric("Transmission Lines",f"{total_lines:,}")
+        with metric4:
+            st.metric("Lines Under Maintenance",f"{len(maintenance_lines):,}",f"{maintenance_percentage:.1f}%")
+
+        st.divider()
+        st.subheader("Infrastructure Reliability Status")
+        status_counts=reliability_lines["Status"].fillna("Unknown").value_counts().reset_index()
+        status_counts.columns=["Status","Count"]
+        status_col1,status_col2=st.columns(2)
+
+        with status_col1:
+            status_figure=px.pie(status_counts,names="Status",values="Count",title="Transmission Line Status Distribution",hole=0.45)
+            st.plotly_chart(status_figure,use_container_width=True)
+
+        with status_col2:
+            status_bar=px.bar(status_counts,x="Status",y="Count",title="Infrastructure Status",labels={"Status":"Status","Count":"Number of Lines"})
+            st.plotly_chart(status_bar,use_container_width=True)
+
+        st.divider()
+        st.subheader("Capacity Analysis by Region")
+        regional_capacity=reliability_substations.groupby("Region",dropna=False)["Capacity (MVA)"].sum().reset_index().sort_values("Capacity (MVA)",ascending=False)
+        regional_capacity_figure=px.bar(regional_capacity,x="Region",y="Capacity (MVA)",title="Total Substation Capacity by Region",labels={"Region":"Region","Capacity (MVA)":"Total Capacity (MVA)"})
+        regional_capacity_figure.update_layout(xaxis_tickangle=-45)
+        st.plotly_chart(regional_capacity_figure,use_container_width=True)
+
+        st.divider()
+        st.subheader("Capacity by Voltage Level")
+        voltage_capacity=reliability_substations.groupby("Voltage (kV)",dropna=False)["Capacity (MVA)"].sum().reset_index().sort_values("Voltage (kV)")
+        voltage_figure=px.bar(voltage_capacity,x="Voltage (kV)",y="Capacity (MVA)",title="Grid Capacity by Voltage Level",labels={"Voltage (kV)":"Voltage Level (kV)","Capacity (MVA)":"Total Capacity (MVA)"})
+        st.plotly_chart(voltage_figure,use_container_width=True)
+
+        st.divider()
+        st.subheader("Utility Infrastructure Performance")
+        utility_line_information=reliability_lines.groupby("Utility ID",dropna=False).agg(Transmission_Lines=("Line ID","count"),Total_Line_Capacity=("Capacity (MVA)","sum"),Total_Line_Length=("Length (km)","sum")).reset_index()
+        utility_performance=utility_line_information.merge(reliability_utilities[["Utility ID","Name"]],on="Utility ID",how="left")
+        utility_performance["Name"]=utility_performance["Name"].fillna("Unknown")
+        utility_figure=px.bar(utility_performance,x="Name",y="Total_Line_Capacity",title="Transmission Capacity by Utility",labels={"Name":"Utility","Total_Line_Capacity":"Line Capacity (MVA)"})
+        utility_figure.update_layout(xaxis_tickangle=-45)
+        st.plotly_chart(utility_figure,use_container_width=True)
+
+        st.divider()
+        st.subheader("Utility Infrastructure Comparison")
+        utility_scatter=px.scatter(utility_performance,x="Transmission_Lines",y="Total_Line_Capacity",size="Total_Line_Length",hover_name="Name",title="Utility Transmission Infrastructure",labels={"Transmission_Lines":"Number of Transmission Lines","Total_Line_Capacity":"Total Line Capacity (MVA)","Total_Line_Length":"Total Line Length (km)"})
+        st.plotly_chart(utility_scatter,use_container_width=True)
+
+        st.divider()
+        st.subheader("Highest-Capacity Substations")
+        top_substations=reliability_substations[["Substation ID","Name","Region","Voltage (kV)","Capacity (MVA)","Status"]].sort_values("Capacity (MVA)",ascending=False).head(10)
+        st.dataframe(top_substations,use_container_width=True,hide_index=True)
+
+        st.divider()
+        st.subheader("Capacity Concentration Analysis")
+        total_national_capacity=reliability_substations["Capacity (MVA)"].sum()
+        number_of_top_substations=max(1,int(len(reliability_substations)*0.10))
+        top_10_capacity=reliability_substations["Capacity (MVA)"].nlargest(number_of_top_substations).sum()
+        capacity_concentration=top_10_capacity/total_national_capacity*100 if total_national_capacity>0 else 0
+        concentration_column1,concentration_column2=st.columns(2)
+
+        with concentration_column1:
+            st.metric("Top 10% Capacity Concentration",f"{capacity_concentration:.2f}%")
+
+        with concentration_column2:
+            st.metric("Operational Line Percentage",f"{operational_percentage:.2f}%")
+
+        st.write("The capacity concentration measures the percentage of total substation capacity provided by the largest 10% of substations. A high value indicates that a small number of substations are responsible for majority of the grid's capacity.")
 
     """
     Reliability tab:
