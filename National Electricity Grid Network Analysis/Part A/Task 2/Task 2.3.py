@@ -45,8 +45,10 @@ for country in subs_country:
     else:
         subs_util_alias[alias] = 1
 
-#print(subs_util_alias) reveals 6 "Unknown" substations due to mismatching 'Country' names in Utilities.
+# print(subs_util_alias) → reveals 6 "Unknown" substations due to mismatching 'Country' names in Utilities.
 
+print("|", "="*45, "|")
+print("Utility Classification by Substations and Lines: ")
 for util, line, subs in zip(line_util_alias.keys(), line_util_alias.values(), subs_util_alias.values()):
     print(f"Utility {util} has {subs} substations and {line} lines.")
 
@@ -80,17 +82,6 @@ for key, value in zip(volt_cap_ratio.keys(), volt_cap_ratio.values()):
 
 print()
 
-
-# - Identify underserved regions with growth potential
-
-
-
-
-
-
-
-
-
 # - Analyse utility asset age using Commissioning Year
 current_year = datetime.today().year
 comm_years = list(substations['Commissioning Year'])
@@ -101,8 +92,6 @@ def year_calc():
     new_stations = dict(sorted({}))
     midlife_stations = dict(sorted({}))
     aged_stations = dict(sorted({}))
-
-
 
     for name, year in zip(sub_names, comm_years):
         diff = current_year - year
@@ -214,17 +203,6 @@ node_betweenness = nx.betweenness_centrality(G)
 
 line_ids = list(lines['Line ID'])
 
-
-# ============================================================
-# Reliability Proxy Analysis
-# - Composite proxy per line, combining:
-#     1) Maintenance status  (is the line currently under maintenance?)
-#     2) Line length         (longer lines = more physical fault exposure)
-#     3) Centrality          (avg betweenness of the two substations it connects)
-# ASSUMPTION: line length column is named 'Length (km)' below.
-# If your lines.csv uses a different name, change LENGTH_COL only.
-# ============================================================
-
 LENGTH_COL = 'Length (km)'
  
 def minmax_100(values):
@@ -247,7 +225,7 @@ for _, line in lines.iterrows():
     destination = line['Destination Substation ID']
     status = line['Status']
 
-    # Skip lines whose endpoints aren't in the graph (mirrors the "Orphaned line" check above)
+    # Skip lines whose endpoints aren't in the graph (should mirror the "Orphaned line" check above)
     if source not in G.nodes or destination not in G.nodes:
         continue
 
@@ -277,6 +255,7 @@ reliability_df = pd.DataFrame(reliability_rows)
 # Normalize length and centrality so they're comparable on the same scale,
 # then combine into one composite score. Maintenance factor is already 0/1
 # so it's left as-is (acts as a binary risk flag/weight).
+
 if LENGTH_COL in reliability_df.columns and reliability_df[LENGTH_COL].notna().any():
     reliability_df['Length Z'] = minmax_100(reliability_df[LENGTH_COL].fillna(reliability_df[LENGTH_COL].mean()).tolist())
 else:
@@ -284,8 +263,7 @@ else:
 
 reliability_df['Centrality Z'] = minmax_100(reliability_df['Centrality Factor'].tolist())
 
-# Weights are adjustable — maintenance weighted heaviest since it's a direct,
-# current-state risk signal rather than a structural proxy.
+
 W_MAINTENANCE = 0.5
 W_LENGTH = 0.25
 W_CENTRALITY = 0.25
@@ -326,6 +304,3 @@ for node, score in list(substation_risk_ranked.items())[:10]:
     print(f"{name}: {score}")
 
 print()
-
-
-

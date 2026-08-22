@@ -1,20 +1,11 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
 import statistics as stat
 
 utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
 substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
 lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
-
-
-# Create network graph — undirected, since AC power can flow either way
-# along a line depending on system conditions (unlike a scheduled flight,
-# which always has a fixed origin and destination)
-
-# Add substations as nodes with attributes (region, voltage, coordinates, etc.)
-# Add lines as edges with weights (length, capacity, etc.)
 
 
 # Create an undirected graph
@@ -57,9 +48,11 @@ for index, line in lines.iterrows():
             destination_substation
         )
 
-
-print("Number of substations:", G.number_of_nodes())
-print("Number of transmission lines:", G.number_of_edges())
+print()
+print("|", "="*65, "|")
+print("\t\t\tGeneral Statistics: ")
+print("→ Number of substations:", G.number_of_nodes())
+print("→ Number of transmission lines:", G.number_of_edges())
 
 print("\nSubstations:")
 print(G.nodes(data=True))
@@ -67,10 +60,8 @@ print(G.nodes(data=True))
 print("\nTransmission lines:")
 print(G.edges(data=True))
 
-
-# -------------------------------------------------
-# 4. Draw the electricity network
-# -------------------------------------------------
+print()
+# Draw the electricity network
 
 plt.figure(figsize=(14, 10))
 
@@ -98,12 +89,27 @@ node_betweenness = nx.betweenness_centrality(G)
 node_closeness = nx.closeness_centrality(G)
 node_pagerank = nx.pagerank(G)
 
+print()
+print("|", "="*70, "|")
+print("\t\t\tNode Centrality Measures")
+print("→ Node Degree:")
 print(node_degree)
-print(node_betweenness)
-print(node_closeness)
+print()
 
+print("→ Node Betweenness:")
+for key, value in node_betweenness.items():
+    print(f"Node {key}: {value:.3f}")
+print()
+
+print("→ Node Closeness:")
+for key, value in node_closeness.items():
+    print(f"Node {key}: {value:.3f}")
+print()
+
+print("→ Node PageRank:")
 for key, value in node_pagerank.items():
     print(f"Node {key}: {value:.3f}")
+print()
 
 # - Network diameter and average path length
 connected = nx.connected_components(G)
@@ -111,18 +117,26 @@ max_connect = max(connected, key=len)
 
 sub = G.subgraph(max_connect)
 diameter = nx.diameter(sub)
-print(diameter)
+print(f"Network Diameter: {diameter}")
 
-print(stat.mean(lines[data[0][0]]))
+print()
+print(f"Average Path Length: {stat.mean(lines[data[0][0]]):.3f}")
+print()
 
 # - Clustering coefficients
 clustered = nx.clustering(G)
 
+print("Clustering Coefficients:")
 for key, value in clustered.items():
-    print(f"Node {key}: {value:.1f}")
+    print(f"Node {key}: {value:.2f}")
+print()
 
 comm = nx.community.louvain_communities(G)
+
+print("Community Detection: ")
 print(comm)
+print()
+
 
 # community detection
 communities = {}
@@ -144,7 +158,9 @@ for country in countries:
         
         communities[country][reg] = filtered_stations
 
-print(communities)
+print("Filtered Stations by Country and Region: ")
+for key, value in communities.items():
+    print(f"{key}: {value}\n")
 
 print()
 
@@ -171,6 +187,7 @@ for edge, score in sorted_edges[:10]:  # top 10
     print(f"{edge}: {score:.4f}")
 
 print()
+
 # - Detect isolated components
 source_substation = list(lines["Source Substation ID"])
 destination_substation = list(lines["Destination Substation ID"])
@@ -187,5 +204,5 @@ print(f"The network efficiency is at {nx.global_efficiency(G):.3f}%, meaning tha
 print()
 
 # Plotting the network
-plt.show()
+# plt.show()
 

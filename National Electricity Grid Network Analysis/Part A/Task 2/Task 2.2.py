@@ -62,6 +62,7 @@ print(
         ]
     ]
 )
+print()
 
 # Put substations from the same region together.
 regional_substation_summary = (
