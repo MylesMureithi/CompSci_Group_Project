@@ -59,6 +59,9 @@ voltage = list(substations['Voltage (kV)'])
 capacity = list(substations['Capacity (MVA)'])
 sub_names = list(substations['Name'])
 
+print("|", "="*45, "|")
+print("Capacity Classifications: ")
+
 volt_cap_ratio = {}
 
 for name, volt, cap in zip(sub_names, voltage, capacity):
@@ -87,7 +90,8 @@ current_year = datetime.today().year
 comm_years = list(substations['Commissioning Year'])
 # sub_names = list(substations['Name'])
 
-
+print("|", "="*60, "|")
+print("Substation Classification by Age: ")
 def year_calc():
     new_stations = dict(sorted({}))
     midlife_stations = dict(sorted({}))
@@ -106,7 +110,7 @@ def year_calc():
     ordered_midlife_stations = dict(sorted(midlife_stations.items()))
     ordered_aged_stations = dict(sorted(aged_stations.items()))
 
-    return ordered_new_stations, ordered_midlife_stations, ordered_aged_stations
+    return f"\nYounger Stations (< 15 yrs):\n{ordered_new_stations}\n\nMid-life Stations (16 - 25yrs):\n{ordered_midlife_stations}\n\nAged Stations (> 25 yrs):\n{ordered_aged_stations}\n\n"
 
 print(year_calc())
 
@@ -297,7 +301,7 @@ substation_risk_ranked = dict(
     sorted(substation_risk_avg.items(), key=lambda item: item[1], reverse=True)
 )
 
-print("Substation-level average reliability risk (highest first):")
+print("\nSubstation-level average reliability risk (highest first):")
 print("-" * 100)
 for node, score in list(substation_risk_ranked.items())[:10]:
     name = G.nodes[node].get('name', node)
