@@ -1,60 +1,23 @@
-'''
-Create a master dataset by joining all three tables
-# Establish foreign key relationships (Utility ID, Substation ID)
-# Handle orphaned records (lines referencing a substation ID that doesn't exist)
-# Create lookup dictionaries for efficient querying
-# Validate join operations and document any data loss
-# '''
-
 import pandas as pd
-import numpy as np
-import statistics as stat
-import matplotlib.pyplot as plt
 
 utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
 substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
 lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
 
-"""lines_with_source = lines.merge(
-    substations[['Substation ID', 'Name', 'Region', 'Country']],
-    left_on='Source Substation ID', right_on='Substation ID',
-    how='left', suffixes=("", '_source')
-)
 
-print(lines_with_source)
-
-master_set = lines.merge(
-    substations, on="Substation ID", how='left'
-    ).merge(utilities, on="Utility ID", how='left'
-)
-
-print(master_set)
-"""
-
-
-
-
-# Chain merge: Orders + Customers, then + Payments
-"""
-master_df = df_orders.merge(
-    df_customers, on="customer_id", how="left"
-).merge(df_payments, on="order_id", how="left")
-
-print(master_df.head())
-"""
-
-lines_with_source=lines.merge(substations[
+lines_with_source = lines.merge(substations[
     ["Substation ID","Name","Region","Country"]
 ], left_on="Source Substation ID" ,right_on="Substation ID",how="left")
 
-lines_with_source=lines_with_source.rename(
+lines_with_source = lines_with_source.rename(
     columns={
         "Name": "Source Substation Name",
         "Region": "Source Region",
         "Country": "Source Country"
 }
 )
-lines_with_source=lines_with_source.drop( columns =["Substation ID"])
+
+lines_with_source = lines_with_source.drop(columns = ["Substation ID"])
 
 lines_with_source_and_destination_information = (
     lines_with_source.merge(
@@ -114,6 +77,7 @@ master_set = master_set.rename(
         "Active": "Utility Active"
     }
 )
+
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_rows",None)
 print(master_set)
@@ -124,12 +88,15 @@ print(master_set)
 line_sub_ids = list(lines['Source Substation ID'])
 sub_sub_ids = list(substations['Substation ID'])
 
+ordered_line_ids = sorted(line_sub_ids)
+ordered_sub_ids = sorted(sub_sub_ids)
+
 print(sub_sub_ids)
 
 print()
 
-for value in line_sub_ids:
-    if value not in sub_sub_ids:
+for value in ordered_line_ids:
+    if value not in ordered_sub_ids:
         print(f"{value} is an orphan.")
     else:
         print(f"{value} is attached!")
@@ -172,5 +139,4 @@ for id in utility_id:
     utility_dict[id] = [utility_name[id - 1], utility_code[id - 1], utility_status[id - 1]]
 
 print(utility_dict)
-
-# Validate join operations and document any data loss
+print()
