@@ -204,5 +204,5 @@ print(f"The network efficiency is at {nx.global_efficiency(G):.3f}%, meaning tha
 print()
 
 # Plotting the network
-# plt.show()
+plt.show()
 

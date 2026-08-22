@@ -20,6 +20,13 @@ lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines
 # - Comparison tools for different utilities
 
 
+# Set page configuration
+st.set_page_config(
+    page_title="National Electricity Grid Analysis",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Defining tab titles
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["📊 Overview", "📈 Network", "🌍 Geography",  "🛠️ Reliability", "🔍 Search"])
 
