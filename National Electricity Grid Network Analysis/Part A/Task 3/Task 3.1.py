@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 import networkx as nx
 import plotly.graph_objects as go
 import streamlit_folium as sf
@@ -22,10 +20,10 @@ lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines
 # - Comparison tools for different utilities
 
 
-# 1. Define your tab titles
+# Defining tab titles
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["📊 Overview", "📈 Network", "🌍 Geography",  "🛠️ Reliability", "🔍 Search"])
 
-# 2. Add content to each tab using the 'with' block
+# Adding tab content
 with tab1:
     st.title("Dashboard Metrics")
     st.header("Key Statistics & Executive Summary")
@@ -69,26 +67,27 @@ with tab2:
     st.title("Network Overview")
     st.write("Interactive network gaphs that show connections between substations")
 
-    regions=["All Regions"]+sorted(substations["Region"].dropna().unique().tolist())
+    regions = ["All Regions"]+sorted(substations["Region"].dropna().unique().tolist())
     select_region = st.selectbox("Filter by Region",regions)
     if select_region =="All Regions": 
         substation_info=substations.copy()
     else:
-        substation_info= substations[substations["Region"]==select_region]
+        substation_info = substations[substations["Region"]==select_region]
 
-    substation_id= set(substation_info["Substation ID"])
-    lines_info=lines.copy()
+    substation_id = set(substation_info["Substation ID"])
+    lines_info = lines.copy()
 
     lines_info = lines[lines["Source Substation ID"].isin(substation_id)& lines["Destination Substation ID"].isin(substation_id)]
 
     f_metric,s_metric = st.columns(2)
+
     with f_metric:
         st.metric("Substations",len(substation_info))
 
     with s_metric:
         st.metric("Lines",len(lines_info))
 
-    grid=nx.Graph()
+    grid = nx.Graph()
 
     for i, substation in substation_info.iterrows():
         grid.add_node(
@@ -110,13 +109,14 @@ with tab2:
             capacity=line["Capacity (MVA)"],
             status = line["Status"]
         )
+
     node_place = nx.spring_layout(grid, seed=42)
-    line_xcoor=[]
-    line_ycoor=[]
+    line_xcoor = []
+    line_ycoor = []
 
     for source_substation_id, destination_substation_id in grid.edges():
-        source_sub_xcoor,source_sub_ycoor =node_place[source_substation_id]
-        destination_sub_xcoor,destination_ycoor=node_place[destination_substation_id]
+        source_sub_xcoor,source_sub_ycoor = node_place[source_substation_id]
+        destination_sub_xcoor,destination_ycoor = node_place[destination_substation_id]
 
         line_xcoor.extend([source_sub_xcoor,destination_sub_xcoor,None])
         line_ycoor.extend([source_sub_ycoor,destination_ycoor,None])
@@ -130,10 +130,10 @@ with tab2:
         name="Transmission Lines"
     )
 
-    sub_xcoors=[]
-    sub_ycoors=[]
-    sub_hover_info=[]
-    sub_marker_sides=[]
+    sub_xcoors = []
+    sub_ycoors = []
+    sub_hover_info = []
+    sub_marker_sides = []
 
     for substation_id in grid.nodes():
         sub_xcoor,sub_ycoor=node_place[substation_id]
@@ -155,7 +155,7 @@ with tab2:
         )
         sub_marker_sides.append(max(15,substation["capacity"]**0.5))
 
-    sub_join= go.Scatter(
+    sub_join = go.Scatter(
         x=sub_xcoors,
         y=sub_ycoors,
         mode="markers",
@@ -164,7 +164,7 @@ with tab2:
         marker=dict(size=sub_marker_sides),
         name="Substations"
     )
-    grid_figure=go.Figure(
+    grid_figure = go.Figure(
         data=[line_join,sub_join]
     )
 
@@ -191,7 +191,6 @@ with tab2:
 
 with tab3:
     st.title("Geography Overview")
-    st.checkbox("Enable Notifications")
     def geography_overview(utilities, substations, lines):
 
         st.header("3.1 Geography Overview")
@@ -448,6 +447,7 @@ with tab3:
 with tab4:
     st.title("Reliability Overview")
     st.write("Welcome to the Reliability Overview.")
+
     with tab4:
         st.title("Reliability & Capacity Analysis")
         st.write("Business intelligence analysis of grid capacity, infrastructure status, maintenance, and reliability indicators.")
@@ -472,16 +472,21 @@ with tab4:
         operational_percentage=len(operational_lines)/total_lines*100 if total_lines>0 else 0
 
         metric1,metric2,metric3,metric4=st.columns(4)
+
         with metric1:
             st.metric("Total Grid Capacity",f"{total_capacity:,.0f} MVA")
+
         with metric2:
             st.metric("Total Substations",f"{total_substations:,}")
+
         with metric3:
             st.metric("Transmission Lines",f"{total_lines:,}")
+
         with metric4:
             st.metric("Lines Under Maintenance",f"{len(maintenance_lines):,}",f"{maintenance_percentage:.1f}%")
 
         st.divider()
+
         st.subheader("Infrastructure Reliability Status")
         status_counts=reliability_lines["Status"].fillna("Unknown").value_counts().reset_index()
         status_counts.columns=["Status","Count"]
@@ -496,6 +501,7 @@ with tab4:
             st.plotly_chart(status_bar,use_container_width=True)
 
         st.divider()
+
         st.subheader("Capacity Analysis by Region")
         regional_capacity=reliability_substations.groupby("Region",dropna=False)["Capacity (MVA)"].sum().reset_index().sort_values("Capacity (MVA)",ascending=False)
         regional_capacity_figure=px.bar(regional_capacity,x="Region",y="Capacity (MVA)",title="Total Substation Capacity by Region",labels={"Region":"Region","Capacity (MVA)":"Total Capacity (MVA)"})
@@ -503,12 +509,14 @@ with tab4:
         st.plotly_chart(regional_capacity_figure,use_container_width=True)
 
         st.divider()
+
         st.subheader("Capacity by Voltage Level")
         voltage_capacity=reliability_substations.groupby("Voltage (kV)",dropna=False)["Capacity (MVA)"].sum().reset_index().sort_values("Voltage (kV)")
         voltage_figure=px.bar(voltage_capacity,x="Voltage (kV)",y="Capacity (MVA)",title="Grid Capacity by Voltage Level",labels={"Voltage (kV)":"Voltage Level (kV)","Capacity (MVA)":"Total Capacity (MVA)"})
         st.plotly_chart(voltage_figure,use_container_width=True)
 
         st.divider()
+
         st.subheader("Utility Infrastructure Performance")
         utility_line_information=reliability_lines.groupby("Utility ID",dropna=False).agg(Transmission_Lines=("Line ID","count"),Total_Line_Capacity=("Capacity (MVA)","sum"),Total_Line_Length=("Length (km)","sum")).reset_index()
         utility_performance=utility_line_information.merge(reliability_utilities[["Utility ID","Name"]],on="Utility ID",how="left")
@@ -518,16 +526,19 @@ with tab4:
         st.plotly_chart(utility_figure,use_container_width=True)
 
         st.divider()
+
         st.subheader("Utility Infrastructure Comparison")
         utility_scatter=px.scatter(utility_performance,x="Transmission_Lines",y="Total_Line_Capacity",size="Total_Line_Length",hover_name="Name",title="Utility Transmission Infrastructure",labels={"Transmission_Lines":"Number of Transmission Lines","Total_Line_Capacity":"Total Line Capacity (MVA)","Total_Line_Length":"Total Line Length (km)"})
         st.plotly_chart(utility_scatter,use_container_width=True)
 
         st.divider()
+
         st.subheader("Highest-Capacity Substations")
         top_substations=reliability_substations[["Substation ID","Name","Region","Voltage (kV)","Capacity (MVA)","Status"]].sort_values("Capacity (MVA)",ascending=False).head(10)
         st.dataframe(top_substations,use_container_width=True,hide_index=True)
 
         st.divider()
+
         st.subheader("Capacity Concentration Analysis")
         total_national_capacity=reliability_substations["Capacity (MVA)"].sum()
         number_of_top_substations=max(1,int(len(reliability_substations)*0.10))
@@ -550,22 +561,30 @@ with tab5:
     st.write("Search for specific substations and lines!")
     st.write("Search & Compare")
     st.subheader("Substation Search")
+
     search_substation=st.text_input("Enter substation name or ID")
+
     if search_substation:
         substation_results=substations[substations["Name"].astype(str).str.contains(search_substation,case=False,na=False)|substations["Substation ID"].astype(str).str.contains(search_substation,case=False,na=False)]
         st.write("Substations found:",len(substation_results))
         st.dataframe(substation_results,use_container_width=True,hide_index=True)
+
     st.divider()
+
     st.subheader("Transmission Line Search")
     search_line=st.text_input("Enter line ID or substation name")
+
     if search_line:
         line_results=lines[lines["Line ID"].astype(str).str.contains(search_line,case=False,na=False)|lines["Source Substation"].astype(str).str.contains(search_line,case=False,na=False)|lines["Destination Substation"].astype(str).str.contains(search_line,case=False,na=False)]
         st.write("Transmission lines found:",len(line_results))
         st.dataframe(line_results,use_container_width=True,hide_index=True)
+
     st.divider()
+
     st.subheader("Utility Comparison")
     utility_names=utilities["Name"].dropna().unique().tolist()
     selected_utilities=st.multiselect("Select utilities to compare",utility_names)
+
     if selected_utilities:
         selected_utilities_data=utilities[utilities["Name"].isin(selected_utilities)]
         utility_ids=selected_utilities_data["Utility ID"].tolist()
@@ -583,13 +602,3 @@ with tab5:
 
 
 # run command: python -m streamlit run "National Electricity Grid Network Analysis/Part A/Task 3/Task 3.1.py"
-
-
-
-# Line chart
-#data = pd.DataFrame(np.random.randn(20, 3), columns=["A", "B", "C"])
-#st.line_chart(data)
-
-# Map visualization
-#map_data = pd.DataFrame(np.random.randn(100, 2) / [50, 50] + [37.76, -122.4], columns=["lat", "lon"])
-#st.map(map_data)

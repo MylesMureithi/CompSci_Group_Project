@@ -19,12 +19,9 @@ st.set_page_config(
 )
 
 st.title("⚡ National Electricity Grid Network Analysis")
-st.caption("Task 3.2 — Interactive Visualization Showcase")
+st.caption("Task 3.2 Visualization Showcase")
 
-
-# ============================================================
-# 1. DATA LOADING & PREPROCESSING (CACHED)
-# ============================================================
+# Data loading and processing
 @st.cache_data
 def load_and_prepare_data():
     utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
@@ -99,15 +96,14 @@ def load_and_prepare_data():
 
 utilities, substations, lines, lines_with_geographic_data = load_and_prepare_data()
 
-# Sidebar KPI metrics
+# Sidebar metrics
 st.sidebar.header("Grid Summary")
 st.sidebar.metric("Utilities", len(utilities))
 st.sidebar.metric("Substations", len(substations))
 st.sidebar.metric("Transmission Lines", len(lines))
 
-# ============================================================
-# 2. NAVIGATION TABS
-# ============================================================
+
+# Navigation tabs
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "🕸️ Networks & 3D",
     "🔄 Flows & Chord",
@@ -117,9 +113,7 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "⏳ Grid Expansion"
 ])
 
-# ------------------------------------------------------------
-# TAB 1: Force-Directed & 3D Network
-# ------------------------------------------------------------
+
 with tab1:
     col1, col2 = st.columns(2)
 
@@ -187,9 +181,7 @@ with tab1:
         fig_3d.update_layout(scene=dict(xaxis_title="Longitude", yaxis_title="Latitude", zaxis_title="Capacity (MVA)"), margin=dict(l=0, r=0, b=0, t=30))
         st.plotly_chart(fig_3d, use_container_width=True)
 
-# ------------------------------------------------------------
-# TAB 2: Regional Flows / Chord Diagram
-# ------------------------------------------------------------
+
 with tab2:
     st.subheader("Inter-Regional Transmission Flow Diagram")
     regional_flows = lines_with_geographic_data.dropna(subset=["Source Region", "Destination Region"]).groupby(["Source Region", "Destination Region"]).size().reset_index(name="Line Count")
@@ -252,9 +244,7 @@ with tab2:
         chord_fig.update_layout(xaxis=dict(visible=False, range=[-1.3, 1.3]), yaxis=dict(visible=False, range=[-1.3, 1.3], scaleanchor="x"), margin=dict(l=0, r=0, t=30, b=0))
         st.plotly_chart(chord_fig, use_container_width=True)
 
-# ------------------------------------------------------------
-# TAB 3: Line Density & Maintenance Heatmaps
-# ------------------------------------------------------------
+
 with tab3:
     col1, col2 = st.columns(2)
 
@@ -274,9 +264,8 @@ with tab3:
         fig_maint = px.imshow(maint_matrix, text_auto=True, aspect="auto", labels=dict(x="Status", y="Region", color="Lines"))
         st.plotly_chart(fig_maint, use_container_width=True)
 
-# ------------------------------------------------------------
-# TAB 4: Utility Comparison Metrics
-# ------------------------------------------------------------
+
+
 with tab4:
     st.subheader("Utility Infrastructure Metrics")
     utility_metrics = lines_with_geographic_data.groupby("Utility Name").agg(
@@ -296,9 +285,8 @@ with tab4:
     fig_util = px.bar(utility_metrics, x="Utility Name", y=col_map[metric_choice], color="Utility Name", title=f"{metric_choice} by Utility")
     st.plotly_chart(fig_util, use_container_width=True)
 
-# ------------------------------------------------------------
-# TAB 5: Substation Metrics & Regional Capacity
-# ------------------------------------------------------------
+
+
 with tab5:
     col1, col2 = st.columns(2)
 
@@ -316,9 +304,8 @@ with tab5:
         fig_reg.update_layout(xaxis_tickangle=-45)
         st.plotly_chart(fig_reg, use_container_width=True)
 
-# ------------------------------------------------------------
-# TAB 6: Animated Grid Expansion
-# ------------------------------------------------------------
+
+
 with tab6:
     st.subheader("Grid Expansion Over Time")
 
