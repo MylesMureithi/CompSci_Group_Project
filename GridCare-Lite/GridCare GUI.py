@@ -117,7 +117,7 @@ def init_db(db_path='gridcare.db'):
         INSERT OR IGNORE INTO users (username, password_hash, role)
         VALUES (?, ?, ?)
         ''',
-        ('admin', 'password123', 'admin')
+        ('admin', 'password123', 'administrator')
     )
 
         # Seed additional technician users for demo purposes
