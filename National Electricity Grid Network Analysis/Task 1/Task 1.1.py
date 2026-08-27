@@ -45,7 +45,7 @@ for i in data[0]:
 
             substations.to_csv("new_substations.csv", index=False)
 
-
+print(k)
 
 line_ids = list(lines['Source Substation ID'])
 sub_ids = list(substations['Substation ID'])
