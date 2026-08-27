@@ -134,5 +134,5 @@ for i in data[0]:
             print(f"{j+1}: {value} has a valid type [{type(value)}].")
         else:
             print(f"{j+1}: {value} has an invalid type [{type(value)}].")
+    print("\n")
 
-print()
