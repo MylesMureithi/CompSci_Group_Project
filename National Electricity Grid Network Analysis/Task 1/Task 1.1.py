@@ -1,7 +1,6 @@
 # Step 1: Load and examine raw data
 
 import pandas as pd
-import numpy as np
 import statistics as stat
 import time
 
