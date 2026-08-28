@@ -1,5 +1,4 @@
-# CompSci_Group_Project
-"Integrated Data Science and Software Engineering Course Project" group repository.
+# Integrated Data Science and Software Engineering Course Project.
 
 
 # Part 1: National Electricity Grid Network Analysis & GridCare System
