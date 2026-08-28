@@ -327,3 +327,5 @@ with tab6:
     )
     fig_exp.update_layout(margin=dict(l=0, r=0, b=0, t=30))
     st.plotly_chart(fig_exp, use_container_width=True)
+
+#python command : python -m streamlit run "National Electricity Grid Network Analysis/Task 3/Task 3.2.py"

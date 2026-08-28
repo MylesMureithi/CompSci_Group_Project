@@ -7,21 +7,15 @@ substations = pd.read_csv('grid-analysis/data_files/substations.csv') # substati
 lines = pd.read_csv('grid-analysis/data_files/lines.csv') # lines.csv
 
 
-# Matches every Substation ID to its latitude and longitude
 substation_coordinates = (
-    substations
-    .set_index("Substation ID")[["Latitude", "Longitude"]]
-    .apply(tuple, axis=1)
-    .to_dict()
+    substations.set_index("Substation ID")[["Latitude", "Longitude"]].apply(tuple, axis=1).to_dict()
 )
 
-# Calculate the direct geographic distance for one transmission line.
 def calculate_geodesic_distance(line):
 
     source_substation_id = line["Source Substation ID"]
     destination_substation_id = line["Destination Substation ID"]
 
-    # If either substation is missing, the distance cannot be calculated.
     if (
         source_substation_id not in substation_coordinates
         or destination_substation_id not in substation_coordinates
@@ -31,20 +25,17 @@ def calculate_geodesic_distance(line):
     source_coordinates = substation_coordinates[source_substation_id]
     destination_coordinates = substation_coordinates[destination_substation_id]
 
-    # geodesic() uses the two coordinate pairs.
-    # .km returns the result in kilometres.
+
     return geodesic(
         source_coordinates,
         destination_coordinates
     ).km
 
-# axis=1 means run the function on each row.
 lines["Geodesic Distance (km)"] = lines.apply(
     calculate_geodesic_distance,
     axis=1
 )
 
-# Compare the recorded length with the calculated direct distance.
 lines["Distance Difference (km)"] = (
     lines["Length (km)"]
     - lines["Geodesic Distance (km)"]
@@ -64,7 +55,6 @@ print(
 )
 print()
 
-# Put substations from the same region together.
 regional_substation_summary = (
     substations
     .groupby("Region")
@@ -85,10 +75,8 @@ print(regional_substation_summary)
 # another substation is geographically nearby.
 nearby_distance_km = 40
 
-# Store the number of nearby substations for every station.
 nearby_substation_counts = []
 
-# Compare each substation with every other substation.
 for first_index, first_substation in substations.iterrows():
 
     nearby_substation_count = 0
@@ -100,7 +88,6 @@ for first_index, first_substation in substations.iterrows():
 
     for second_index, second_substation in substations.iterrows():
 
-        # Compare substations with other substations.
         if first_index != second_index:
 
             second_substation_coordinates = (
@@ -113,21 +100,18 @@ for first_index, first_substation in substations.iterrows():
                 second_substation_coordinates
             ).km
 
-            # Count another station if it is within 40 km.
             if distance_between_substations <= nearby_distance_km:
                 nearby_substation_count += 1
 
     nearby_substation_counts.append(nearby_substation_count)
 
-# Add the counts to the substations DataFrame.
 substations["Nearby Substations"] = nearby_substation_counts
 
-# At least two nearby substations suggests a local concentration.
+
 substations_in_clusters = substations[
     substations["Nearby Substations"] >= 2
 ]
 
-# No nearby substations suggests geographic isolation.
 possible_coverage_gaps = substations[
     substations["Nearby Substations"] == 0
 ]
@@ -146,7 +130,6 @@ print(
     ]
 )
 
-# Add the utility name to every transmission line.
 lines_with_utility = lines.merge(
     utilities[
         ["Utility ID", "Name"]
@@ -157,7 +140,6 @@ lines_with_utility = lines.merge(
     how="left"
 )
 
-# Add source coordinates.
 lines_with_geographic_data = lines_with_utility.merge(
     substations[
         ["Substation ID", "Latitude", "Longitude"]
@@ -172,7 +154,6 @@ lines_with_geographic_data = lines_with_utility.merge(
     how="left"
 ).drop(columns="Substation ID")
 
-# Add destination coordinates.
 lines_with_geographic_data = lines_with_geographic_data.merge(
     substations[
         ["Substation ID", "Latitude", "Longitude"]
@@ -187,20 +168,15 @@ lines_with_geographic_data = lines_with_geographic_data.merge(
     how="left"
 ).drop(columns="Substation ID")
 
-# Centre used by the Folium maps.
 map_center = [
     substations["Latitude"].mean(),
     substations["Longitude"].mean()
 ]
 
-# FOLIUM METHOD: Map()
-# Creates the interactive map.
 utility_network_map = folium.Map(
     location=map_center,
     zoom_start=4
 )
-
-# Get each utility name once.
 utility_names = (
     lines_with_geographic_data["Utility Name"]
     .dropna()
@@ -209,8 +185,6 @@ utility_names = (
 
 for utility_name in utility_names:
 
-    # FOLIUM METHOD: FeatureGroup()
-    # Creates a separate layer for one utility.
     utility_layer = folium.FeatureGroup(
         name=str(utility_name)
     )
@@ -228,8 +202,6 @@ for utility_name in utility_names:
             and pd.notna(line["Destination Longitude"])
         ):
 
-            # FOLIUM METHOD: PolyLine()
-            # Draws the transmission line between two coordinate pairs.
             folium.PolyLine(
                 locations=[
                     [
@@ -249,14 +221,11 @@ for utility_name in utility_names:
                 )
             ).add_to(utility_layer)
 
-    # Places the completed utility layer on the map.
     utility_layer.add_to(utility_network_map)
 
-# FOLIUM METHOD: LayerControl()
 folium.LayerControl().add_to(utility_network_map)
 
 utility_network_map.save("utility_line_networks.html")
-# Give each voltage level a colour.
 voltage_level_colors = {
     11: "green",
     33: "blue",
@@ -265,7 +234,6 @@ voltage_level_colors = {
     330: "red"
 }
 
-# FOLIUM METHOD: Map()
 national_substation_map = folium.Map(
     location=map_center,
     zoom_start=4
@@ -273,27 +241,17 @@ national_substation_map = folium.Map(
 
 for i, substation in substations.iterrows():
 
-    # If a voltage is not in the dictionary, use grey.
     voltage_color = voltage_level_colors.get(substation["Voltage (kV)"],"gray")
 
-    # FOLIUM METHOD: CircleMarker()
-    # Places a circle at the substation's real coordinates.
     folium.CircleMarker(
         location=[substation["Latitude"],substation["Longitude"] ],
 
-        # radius controls marker size.
         radius=5,
-
-        # color controls the outside of the circle.
         color=voltage_color,
 
-        # fill=True fills the marker.
         fill=True,
-
-        # fill_color controls the inside colour.
         fill_color=voltage_color,
 
-        # popup appears when the marker is clicked.
         popup=(
             f"Name: {substation['Name']}<br>"
             f"Region: {substation['Region']}<br>"
@@ -302,18 +260,14 @@ for i, substation in substations.iterrows():
             f"Status: {substation['Status']}"
         ),
 
-        # tooltip appears when I hover over the marker.
         tooltip=substation["Name"]
 
-    # add_to() places the marker on this map.
     ).add_to(national_substation_map)
 
 national_substation_map.save(
     "national_substations_by_voltage.html"
 )
 
-
-# Count how many transmission lines connect to each substation.
 connected_line_counts = {}
 
 for i, line in lines.iterrows():
@@ -329,14 +283,12 @@ for i, line in lines.iterrows():
         connected_line_counts.get(destination_substation_id, 0) + 1
     )
 
-# Match each Substation ID to its number of connected lines.
 substations["Connected Lines"] = (
     substations["Substation ID"]
     .map(connected_line_counts)
     .fillna(0)
 )
 
-# FOLIUM METHOD: Map()
 line_density_map = folium.Map(
     location=map_center,
     zoom_start=4
@@ -346,10 +298,8 @@ for i, substation in substations.iterrows():
 
     number_of_connected_lines = substation["Connected Lines"]
 
-    # Larger circles mean more connected transmission lines.
     marker_radius = 4 + number_of_connected_lines
 
-    # FOLIUM METHOD: CircleMarker()
     folium.CircleMarker(
         location=[
             substation["Latitude"],
@@ -368,8 +318,6 @@ line_density_map.save(
     "line_density_concentration_map.html"
 )
 
-
-# Match each Substation ID to its region and country.
 substation_region_lookup = (
     substations
     .set_index("Substation ID")["Region"]
@@ -432,7 +380,6 @@ connectivity_summary = (
 
 print(connectivity_summary)
 
-# FOLIUM METHOD: Map()
 regional_connectivity_map = folium.Map(
     location=map_center,
     zoom_start=4
@@ -456,17 +403,8 @@ for i, line in lines_with_geographic_data.iterrows():
         else:
             connectivity_color = "gray"
 
-        # FOLIUM METHOD: PolyLine()
         folium.PolyLine(
-            locations=[
-                [
-                    line["Source Latitude"],
-                    line["Source Longitude"]
-                ],
-                [
-                    line["Destination Latitude"],
-                    line["Destination Longitude"]
-                ]
+            locations=[[line["Source Latitude"],line["Source Longitude"]],[line["Destination Latitude"],line["Destination Longitude"]]
             ],
             color=connectivity_color,
             weight=2,

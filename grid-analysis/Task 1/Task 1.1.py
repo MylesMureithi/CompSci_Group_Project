@@ -1,7 +1,6 @@
 # Step 1: Load and examine raw data
 
 import pandas as pd
-import numpy as np
 import statistics as stat
 import time
 
@@ -46,7 +45,7 @@ for i in data[0]:
 
             substations.to_csv("new_substations.csv", index=False)
 
-
+print(k)
 
 line_ids = list(lines['Source Substation ID'])
 sub_ids = list(substations['Substation ID'])
@@ -134,5 +133,5 @@ for i in data[0]:
             print(f"{j+1}: {value} has a valid type [{type(value)}].")
         else:
             print(f"{j+1}: {value} has an invalid type [{type(value)}].")
+    print("\n")
 
-print()
