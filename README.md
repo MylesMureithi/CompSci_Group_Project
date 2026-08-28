@@ -302,11 +302,10 @@ npm run preview
 * Automated testing
 * Improved accessibility
 
-## 📄 License
 
-This project is intended for educational and development purposes.
 
 ---
 
 **ClinicCare Lite Frontend**
+
 *React • React Router • JavaScript/JSX • CSS*
