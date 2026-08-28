@@ -169,3 +169,144 @@ For production deployment:
 ---
 
 **Built with Python • Pandas • NetworkX • Matplotlib • Folium • Streamlit • Plotly • GeoPy • SQLite**
+
+
+## Part 2: ClinicCare Lite Frontend
+
+A responsive healthcare system (frontend-focused) built with **React, React Router, JavaScript/JSX, and CSS**.
+
+ClinicCare Lite provides separate **patient** and **clinician** portals for managing healthcare tasks, forms, health outcomes, reviews, and messaging.
+
+## ✨ Features
+
+* Patient and clinician dashboards
+* Task and due-date management
+* Form submissions and reviews
+* Health outcome tracking
+* Patient ↔ clinician messaging
+* Light/dark theme support
+* Responsive design
+* Client-side routing
+* Authentication pages
+* 404 error handling
+
+## 🛠️ Tech Stack
+
+| Technology       | Purpose                              |
+| ---------------- | ------------------------------------ |
+| React            | UI development                       |
+| React Router DOM | Client-side routing                  |
+| JavaScript / JSX | Application logic                    |
+| CSS              | Styling, themes & responsive layouts |
+
+## 📁 Structure
+
+```text
+ClinicCare-Lite-Frontend/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── patient/
+│   ├── clinician/
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── README.md
+```
+
+## 👤 Patient Portal
+
+Patients can:
+
+* View their dashboard
+* Manage tasks and due dates
+* Complete and track forms
+* Monitor health outcomes
+* Communicate with clinicians
+
+## 🩺 Clinician Portal
+
+Clinicians can:
+
+* View their dashboard
+* Manage forms
+* Review patient submissions
+* Access submission logs
+* Review patient responses
+* Communicate with patients
+
+## 🧭 Routing
+
+```text
+/                  Home
+/login             Login
+/register          Register
+
+/patient           Patient Dashboard
+/patient/tasks
+/patient/forms
+/patient/health-outcomes
+/patient/messages
+
+/clinician         Clinician Dashboard
+/clinician/forms
+/clinician/submissions
+/clinician/reviews
+/clinician/messages
+```
+
+A 404 page handles invalid routes.
+
+## 🎨 Design
+
+The application uses CSS variables for consistent styling and supports:
+
+* Light and dark themes
+* Desktop, tablet, and mobile layouts
+* Responsive dashboards and components
+
+## ⚙️ Installation
+
+```bash
+git clone <repository-url>
+cd ClinicCare-Lite-Frontend
+npm install
+npm run dev
+```
+
+### Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## 🔐 User Roles
+
+| Role      | Features                                 |
+| --------- | ---------------------------------------- |
+| Patient   | Tasks, forms, health outcomes, messaging |
+| Clinician | Forms, submissions, reviews, messaging   |
+
+## 🚧 Future Improvements
+
+* Backend/API integration
+* Secure authentication
+* Database integration
+* Real-time messaging
+* Appointment scheduling
+* Notifications
+* File uploads
+* Automated testing
+* Improved accessibility
+
+## 📄 License
+
+This project is intended for educational and development purposes.
+
+---
+
+**ClinicCare Lite Frontend**
+*React • React Router • JavaScript/JSX • CSS*
