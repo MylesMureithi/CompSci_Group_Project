@@ -169,8 +169,8 @@ For production deployment:
 ---
 
 **Built with Python • Pandas • NetworkX • Matplotlib • Folium • Streamlit • Plotly • GeoPy • SQLite**
----
 
+---
 
 ## Part 2: ClinicCare Lite Frontend
 
