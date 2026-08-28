@@ -309,3 +309,7 @@ npm run preview
 **ClinicCare Lite Frontend**
 
 *React • React Router • JavaScript/JSX • CSS*
+
+
+##### Video explanations for each section:
+→ https://drive.google.com/file/d/1Q8pofDCiV4Cc_bFtVhn-XAxprfVDsKbM/view?usp=sharing
