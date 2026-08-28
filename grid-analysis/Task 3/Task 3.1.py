@@ -6,9 +6,9 @@ import streamlit_folium as sf
 import folium
 import plotly.express as px
 
-utilities = pd.read_csv('National Electricity Grid Network Analysis/data_files/utilities.csv') # utilities.csv
-substations = pd.read_csv('National Electricity Grid Network Analysis/data_files/substations.csv') # substations.csv
-lines = pd.read_csv('National Electricity Grid Network Analysis/data_files/lines.csv') # lines.csv
+utilities = pd.read_csv('grid-analysis/data_files/utilities.csv') # utilities.csv
+substations = pd.read_csv('grid-analysis/data_files/substations.csv') # substations.csv
+lines = pd.read_csv('grid-analysis/data_files/lines.csv') # lines.csv
 
 
 # Dashboard components:
