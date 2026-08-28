@@ -26,11 +26,11 @@ A Python-based project combining **electricity-grid data analysis, network relia
 ## Project Structure
 
 ```text
-National Electricity Grid Network Analysis & GridCare System/
+system-files/
 ├── main.py
 ├── gridcare.db
 ├── README.md
-└── National Electricity Grid Network Analysis/
+└── grid-analysis/
     ├── data_files/
     │   ├── utilities.csv
     │   ├── substations.csv
@@ -51,7 +51,7 @@ National Electricity Grid Network Analysis & GridCare System/
 Cleans and validates the grid datasets, including missing values, duplicates, coordinates, relationships, utilities, substations, and transmission lines.
 
 ```bash
-python "National Electricity Grid Network Analysis/Task 1/task1.py"
+python "grid-analysis/Task 1/task1.py"
 ```
 
 ### Task 2 — Network Science & Reliability
@@ -66,7 +66,7 @@ Models the grid as a NetworkX graph and analyzes:
 * Risk scoring
 
 ```bash
-python "National Electricity Grid Network Analysis/Task 2/task2.py"
+python "grid-analysis/Task 2/task2.py"
 ```
 
 ### Task 3.1 — Core Grid Explorer
@@ -74,7 +74,7 @@ python "National Electricity Grid Network Analysis/Task 2/task2.py"
 Interactive Streamlit dashboard featuring KPIs, regional filtering, maps, infrastructure search, reliability metrics, and network statistics.
 
 ```bash
-python -m streamlit run "National Electricity Grid Network Analysis/Task 3/Task 3.1.py"
+python -m streamlit run "grid-analysis/Task 3/Task 3.1.py"
 ```
 
 ### Task 3.2 — Advanced Analytics
@@ -82,7 +82,7 @@ python -m streamlit run "National Electricity Grid Network Analysis/Task 3/Task 
 Provides advanced network and geographic visualizations, including topology graphs, 3D representations, spatial networks, chord diagrams, maintenance heatmaps, and historical expansion.
 
 ```bash
-python -m streamlit run "National Electricity Grid Network Analysis/Task 3/Task 3.2.py"
+python -m streamlit run "grid-analysis/Task 3/Task 3.2.py"
 ```
 
 ## GridCare-Lite
@@ -132,7 +132,7 @@ pip install pandas networkx matplotlib folium streamlit streamlit-folium plotly 
 Ensure the following datasets exist:
 
 ```text
-National Electricity Grid Network Analysis/data_files/
+grid-analysis/data_files/
 ├── utilities.csv
 ├── substations.csv
 └── lines.csv
