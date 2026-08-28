@@ -166,7 +166,6 @@ For production deployment:
 * Use proper authentication/authorization
 * Store sensitive configuration securely
 
----
 
 **Built with Python • Pandas • NetworkX • Matplotlib • Folium • Streamlit • Plotly • GeoPy • SQLite**
 
