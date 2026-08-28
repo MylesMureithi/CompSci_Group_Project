@@ -1,7 +1,7 @@
 # Integrated Data Science and Software Engineering Course Project.
 
 
-# Part 1: National Electricity Grid Network Analysis & GridCare System
+## Part 1: National Electricity Grid Network Analysis & GridCare System
 
 A Python-based project combining **electricity-grid data analysis, network reliability analysis, interactive visualization, and GridCare-Lite**, a desktop grid-management application.
 
